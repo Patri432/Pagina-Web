@@ -1,295 +1,764 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de Patricia Martín y La Maga Pica.">
-  <title>Patricia Martín · La Maga Pica</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <title>Patricia Martín | La Maga Pica</title>
+
+  <meta
+    name="description"
+    content="Portfolio de Patricia Martín y web de La Maga Pica."
+  >
+
+  <link rel="icon" href="logo-pica.png">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- =========================
-       PORTADA: DOS MUNDOS
-       ========================= -->
-  <main id="world-selector" class="world-selector">
-    <section class="world world-patricia" data-world="patricia">
-      <div class="world-copy">
-        <p class="eyebrow">PORTFOLIO PROFESIONAL</p>
-        <h1>Patricia<br><em>Martín</em></h1>
-        <p class="world-description">3D · Animación · Diseño · Arte</p>
+  <!-- =====================================================
+       PANTALLA INICIAL — DOS MUNDOS
+  ====================================================== -->
+
+  <main id="home" class="world-selector">
+
+    <!-- PATRICIA -->
+    <section class="world world-patricia">
+
+      <div class="world-content">
+
+        <p class="world-label">MUNDO 01</p>
+
+        <h1>
+          Patricia<br>
+          Martín
+        </h1>
+
+        <p class="world-description">
+          Diseñadora 3D · Modelado · Environment · Props
+        </p>
+
+        <button
+          class="enter-button"
+          onclick="openWorld('patricia')"
+        >
+          Entrar en mi portfolio
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- MAGA PICA -->
+    <section class="world world-pica">
+
+      <div class="world-content">
+
+        <img
+          src="logo-pica.png"
+          class="pica-logo"
+          alt="La Maga Pica"
+        >
+
+        <p class="world-label">MUNDO 02</p>
+
+        <h1>La Maga<br>Pica</h1>
+
+        <p class="world-description">
+          Magia · Espectáculos · Experiencias
+        </p>
+
         <div class="experience-badge">
-          <strong>10+</strong>
-          <span>AÑOS DE<br>EXPERIENCIA</span>
+          <strong>+10</strong>
+          <span>años de<br>experiencia</span>
         </div>
-        <button class="enter-button" data-enter="patricia">Entrar en mi portfolio <span>↗</span></button>
+
+        <button
+          class="enter-button"
+          onclick="openWorld('pica')"
+        >
+          Entrar en La Maga Pica
+          <span>→</span>
+        </button>
+
       </div>
+
     </section>
 
-    <div class="paper-tear" aria-hidden="true"></div>
-
-    <section class="world world-pica" data-world="pica">
-      <div class="pica-pattern" aria-hidden="true"></div>
-      <div class="world-copy">
-        <p class="eyebrow">OTRO LADO DEL TELÓN</p>
-        <img class="pica-logo-cover" src="assets/logo-pica.png" alt="La Maga Pica">
-        <h2>La Maga Pica</h2>
-        <p class="world-description">Magia, espectáculos y mucho más.</p>
-        <button class="enter-button" data-enter="pica">Entrar en La Maga Pica <span>↗</span></button>
-      </div>
-    </section>
   </main>
 
-  <!-- =========================
-       PATRICIA MARTÍN
-       ========================= -->
-  <div id="patricia-site" class="site site-patricia" hidden>
+
+  <!-- =====================================================
+       WEB PATRICIA
+  ====================================================== -->
+
+  <section id="patricia-page" class="website-page patricia-page hidden">
+
     <header class="site-header">
-      <a href="#top" class="brand" data-home="patricia">
-        <span class="brand-name">Patricia Martín</span>
-        <span class="brand-role">3D · ANIMATION · DESIGN</span>
-      </a>
+
+      <div class="header-logo">
+        <span>PM</span>
+        <strong>Patricia Martín</strong>
+      </div>
+
       <nav>
-        <a href="#about-patricia">Sobre mí</a>
-        <a href="#work-3d">Portfolio</a>
-        <a href="#contact-patricia">Contacto</a>
-        <button class="switch-world" data-switch="pica">La Maga Pica ↗</button>
+
+        <button onclick="showPatriciaSection('inicio')">
+          Inicio
+        </button>
+
+        <button onclick="showPatriciaSection('sobre-mi')">
+          Sobre mí
+        </button>
+
+        <button onclick="showPatriciaSection('experiencia')">
+          Experiencia
+        </button>
+
+        <button onclick="showPatriciaSection('proyectos')">
+          Proyectos
+        </button>
+
+        <button onclick="showPatriciaSection('programas')">
+          Programas
+        </button>
+
+        <button onclick="showPatriciaSection('contacto')">
+          Contacto
+        </button>
+
       </nav>
-      <button class="mobile-menu" aria-label="Abrir menú">☰</button>
+
+      <button class="back-home" onclick="backHome()">
+        ← Mundos
+      </button>
+
     </header>
 
-    <section class="hero-patricia" id="top">
-      <div class="hero-inner">
-        <p class="eyebrow">CREATIVE PORTFOLIO</p>
-        <h1>Creo mundos,<br><em>objetos e historias.</em></h1>
-        <p class="hero-text">Una selección de trabajos de 3D, environment, props y proyectos creativos.</p>
-        <a href="#work-3d" class="scroll-link">Ver proyectos <span>↓</span></a>
-      </div>
-      <div class="hero-number">10<span>+</span></div>
-    </section>
 
-    <section class="intro-section" id="about-patricia">
-      <div class="section-label">01 / SOBRE MÍ</div>
-      <div class="intro-content">
-        <h2>Diseño y construyo<br><em>en tres dimensiones.</em></h2>
-        <p>Portfolio profesional de Patricia Martín. Esta web reúne una selección de trabajos de modelado y creación 3D, junto con una segunda faceta creativa: La Maga Pica.</p>
-        <div class="experience-line"><span>10+</span><div><strong>Más de 10 años</strong><small>de experiencia y aprendizaje creativo</small></div></div>
-      </div>
-    </section>
+    <main class="page-content">
 
-    <!-- =========================
-         3D / RENDER STUDIO 3D
-         ========================= -->
-    <section class="portfolio-section" id="work-3d">
-      <div class="section-heading">
-        <div>
-          <div class="section-label">02 / PORTFOLIO 3D</div>
-          <h2>Environment <em>&amp; Props</em></h2>
+      <!-- INICIO -->
+
+      <section
+        id="patricia-inicio"
+        class="content-section active"
+      >
+
+        <div class="hero-grid">
+
+          <div>
+
+            <p class="eyebrow">
+              PORTFOLIO · DISEÑO 3D
+            </p>
+
+            <h2>
+              Creo mundos<br>
+              <em>en tres dimensiones.</em>
+            </h2>
+
+            <p class="large-text">
+              Soy Patricia Martín, diseñadora 3D especializada
+              en modelado, creación de entornos y props.
+            </p>
+
+            <button
+              class="text-button"
+              onclick="showPatriciaSection('proyectos')"
+            >
+              Ver proyectos →
+            </button>
+
+          </div>
+
+          <div class="intro-card">
+
+            <div class="card-number">01</div>
+
+            <h3>
+              Diseño 3D
+            </h3>
+
+            <p>
+              Modelado de objetos, espacios y elementos
+              para crear escenas completas y coherentes.
+            </p>
+
+          </div>
+
         </div>
-        <p>Trabajos realizados durante mi periodo de prácticas en <strong>Render Studio 3D</strong>, centrados en espacios, arquitectura, mobiliario y elementos urbanos.</p>
-      </div>
 
-      <div class="category-tabs" role="tablist">
-        <button class="category-tab active" data-filter="environment">Environment</button>
-        <button class="category-tab" data-filter="props">Props</button>
-      </div>
+      </section>
 
-      <div class="project-grid" id="project-grid">
-        <!-- ENVIRONMENT -->
-        <article class="project-card project-item" data-category="environment">
-          <button class="project-image-button" data-project="edificio">
-            <img src="assets/edificio-residencial.webp" alt="Edificio residencial 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>ENVIRONMENT / 01</span>
-            <h3>Edificio residencial</h3>
-            <p>Modelado y visualización arquitectónica.</p>
+
+      <!-- SOBRE MI -->
+
+      <section
+        id="patricia-sobre-mi"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          SOBRE MÍ
+        </p>
+
+        <h2>
+          Patricia Martín
+        </h2>
+
+        <div class="two-columns">
+
+          <div>
+            <p class="large-text">
+              Soy una persona creativa, curiosa y apasionada
+              por el mundo 3D.
+            </p>
           </div>
-        </article>
 
-        <article class="project-card project-item" data-category="environment">
-          <button class="project-image-button" data-project="parque">
-            <img src="assets/parque.webp" alt="Parque urbano 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>ENVIRONMENT / 02</span>
-            <h3>Parque urbano</h3>
-            <p>Creación de entorno y elementos de espacio público.</p>
+          <div>
+            <p>
+              Me interesa especialmente transformar ideas,
+              referencias y conceptos en elementos visuales
+              tridimensionales.
+            </p>
+
+            <p>
+              Mi formación y experiencia me han permitido
+              trabajar diferentes partes del proceso 3D,
+              desde el modelado hasta la creación de
+              entornos y objetos.
+            </p>
+
+            <p>
+              Busco seguir creciendo profesionalmente,
+              aprender nuevas herramientas y participar en
+              proyectos donde pueda aportar una visión
+              creativa y técnica.
+            </p>
           </div>
-        </article>
 
-        <article class="project-card project-item" data-category="environment">
-          <button class="project-image-button" data-project="juegos">
-            <img src="assets/parque.webp" alt="Zona de juegos 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>ENVIRONMENT / 03</span>
-            <h3>Zona de juegos</h3>
-            <p>Diseño y modelado de elementos para entorno infantil.</p>
-          </div>
-        </article>
+        </div>
 
-        <!-- PROPS -->
-        <article class="project-card project-item" data-category="props" hidden>
-          <button class="project-image-button" data-project="cocina">
-            <img src="assets/cocina-01.png" alt="Cocina y mobiliario 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>PROPS / 01</span>
-            <h3>Cocina</h3>
-            <p>Modelado de mobiliario y detalle de interior.</p>
-          </div>
-        </article>
+      </section>
 
-        <article class="project-card project-item" data-category="props" hidden>
-          <button class="project-image-button" data-project="cuberteria">
-            <img src="assets/cocina-02.png" alt="Cajón y cubertería 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>PROPS / 02</span>
-            <h3>Cajón y cubertería</h3>
-            <p>Modelado de objetos y detalle de producto.</p>
-          </div>
-        </article>
 
-        <article class="project-card project-item" data-category="props" hidden>
-          <button class="project-image-button" data-project="farola">
-            <img src="assets/farola.png" alt="Farola urbana 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>PROPS / 03</span>
-            <h3>Farola urbana</h3>
-            <p>Modelado de elemento urbano.</p>
-          </div>
-        </article>
+      <!-- EXPERIENCIA -->
 
-        <article class="project-card project-item" data-category="props" hidden>
-          <button class="project-image-button" data-project="fuente">
-            <img src="assets/fuente.webp" alt="Fuente urbana 3D">
-            <span class="project-arrow">↗</span>
-          </button>
-          <div class="project-meta">
-            <span>PROPS / 04</span>
-            <h3>Fuente</h3>
-            <p>Modelado de elemento urbano.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+      <section
+        id="patricia-experiencia"
+        class="content-section"
+      >
 
-    <section class="experience-section">
-      <div class="big-10">10<span>+</span></div>
-      <div>
-        <div class="section-label">EXPERIENCIA</div>
-        <h2>Más de una década<br><em>creando.</em></h2>
-        <p>Una trayectoria construida a través de proyectos, formación y práctica en diferentes áreas creativas.</p>
-      </div>
-    </section>
+        <p class="eyebrow">
+          EXPERIENCIA LABORAL
+        </p>
 
-    <section class="contact-section" id="contact-patricia">
-      <div class="section-label">03 / CONTACTO</div>
-      <h2>¿Hablamos?</h2>
-      <p>Si quieres conocer más sobre mi trabajo o plantear un proyecto, puedes contactar conmigo.</p>
-      <a class="contact-email" href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com ↗</a>
-    </section>
+        <h2>
+          Experiencia
+        </h2>
 
-    <footer class="site-footer">
-      <span>© Patricia Martín</span>
-      <button data-switch="pica">Descubrir La Maga Pica ↗</button>
-    </footer>
-  </div>
+        <div class="experience-list">
 
-  <!-- =========================
-       LA MAGA PICA
-       ========================= -->
-  <div id="pica-site" class="site site-pica" hidden>
+          <article class="experience-item">
+
+            <span>01</span>
+
+            <div>
+
+              <h3>Ascender</h3>
+
+              <p class="role">
+                Modelado 3D
+              </p>
+
+              <p>
+                Modelado de butacas en 3D para proyectos
+                de la empresa.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="experience-item">
+
+            <span>02</span>
+
+            <div>
+
+              <h3>Render Studio 3D</h3>
+
+              <p class="role">
+                Prácticas · Diseñadora 3D
+              </p>
+
+              <p>
+                Durante mi periodo de prácticas participé
+                en proyectos de modelado 3D de diferentes
+                elementos arquitectónicos y de producto.
+              </p>
+
+              <p>
+                Parte de estos trabajos se presentan en
+                este portfolio organizados en las categorías
+                <strong>Environment</strong> y
+                <strong>Props</strong>.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROYECTOS -->
+
+      <section
+        id="patricia-proyectos"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          PROYECTOS
+        </p>
+
+        <h2>
+          Environment & Props
+        </h2>
+
+        <p class="section-intro">
+          Selección de trabajos realizados durante mis
+          prácticas en Render Studio 3D.
+        </p>
+
+
+        <h3 class="project-category">
+          Environment
+        </h3>
+
+        <div class="project-grid">
+
+          <figure class="project-card">
+
+            <img
+              src="assets/environment/edificio.webp"
+              alt="Edificio 3D"
+            >
+
+            <figcaption>
+              <strong>Edificio residencial</strong>
+              <span>Environment · 3D</span>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="project-card">
+
+            <img
+              src="assets/environment/parque.png"
+              alt="Parque infantil 3D"
+            >
+
+            <figcaption>
+              <strong>Espacio exterior</strong>
+              <span>Environment · 3D</span>
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+
+        <h3 class="project-category">
+          Props
+        </h3>
+
+        <div class="project-grid">
+
+          <figure class="project-card">
+
+            <img
+              src="assets/props/cocina-01.png"
+              alt="Cocina 3D"
+            >
+
+            <figcaption>
+              <strong>Cocina</strong>
+              <span>Prop · 3D</span>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="project-card">
+
+            <img
+              src="assets/props/cocina-02.png"
+              alt="Detalle de cocina 3D"
+            >
+
+            <figcaption>
+              <strong>Detalle de cocina</strong>
+              <span>Prop · 3D</span>
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="project-card">
+
+            <img
+              src="assets/props/farola.png"
+              alt="Farola 3D"
+            >
+
+            <figcaption>
+              <strong>Farola urbana</strong>
+              <span>Prop · 3D</span>
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROGRAMAS -->
+
+      <section
+        id="patricia-programas"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          HERRAMIENTAS
+        </p>
+
+        <h2>
+          Programas
+        </h2>
+
+        <div class="software-grid">
+
+          <div>Blender</div>
+          <div>Autodesk Maya</div>
+          <div>AutoCAD</div>
+          <div>Inventor</div>
+          <div>Lumion</div>
+          <div>KeyShot</div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONTACTO -->
+
+      <section
+        id="patricia-contacto"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          CONTACTO
+        </p>
+
+        <h2>
+          Hablemos.
+        </h2>
+
+        <p class="large-text">
+          Si quieres conocer más sobre mi trabajo,
+          puedes contactar conmigo.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:TU_CORREO_AQUI">
+            TU_CORREO_AQUI
+          </a>
+
+          <a href="tel:TU_TELEFONO_AQUI">
+            TU_TELEFONO_AQUI
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </section>
+
+
+  <!-- =====================================================
+       WEB LA MAGA PICA
+  ====================================================== -->
+
+  <section id="pica-page" class="website-page pica-page hidden">
+
     <header class="site-header pica-header">
-      <a href="#pica-top" class="brand pica-brand">
-        <img src="assets/logo-pica.png" alt="La Maga Pica">
-        <span class="brand-name">La Maga Pica</span>
-      </a>
+
+      <div class="header-logo pica-header-logo">
+
+        <img
+          src="logo-pica.png"
+          alt="La Maga Pica"
+        >
+
+        <strong>La Maga Pica</strong>
+
+      </div>
+
       <nav>
-        <a href="#pica-about">Sobre mí</a>
-        <a href="#shows">Espectáculos</a>
-        <a href="#pica-contact">Contacto</a>
-        <button class="switch-world" data-switch="patricia">Patricia Martín ↗</button>
+
+        <button onclick="showPicaSection('inicio')">
+          Inicio
+        </button>
+
+        <button onclick="showPicaSection('sobre-mi')">
+          Sobre mí
+        </button>
+
+        <button onclick="showPicaSection('espectaculos')">
+          Espectáculos
+        </button>
+
+        <button onclick="showPicaSection('contacto')">
+          Contacto
+        </button>
+
       </nav>
-      <button class="mobile-menu" aria-label="Abrir menú">☰</button>
+
+      <button class="back-home" onclick="backHome()">
+        ← Mundos
+      </button>
+
     </header>
 
-    <section class="pica-hero" id="pica-top">
-      <div class="magic-sparkles" aria-hidden="true">✦ · ✧ · ✦</div>
-      <img src="assets/logo-pica.png" alt="La Maga Pica" class="pica-hero-logo">
-      <p class="eyebrow">MAGIA · HUMOR · ESPECTÁCULO</p>
-      <h1>La Maga <em>Pica</em></h1>
-      <p>Un mundo donde las cosas no siempre son lo que parecen.</p>
-      <a href="#shows" class="magic-button">Ver espectáculos ↘</a>
-    </section>
 
-    <section class="pica-about" id="pica-about">
-      <div class="section-label">01 / SOBRE MÍ</div>
-      <div>
-        <h2>Una maga con<br><em>su propio mundo.</em></h2>
-        <p>La Maga Pica es la faceta dedicada a la magia y al espectáculo. Una propuesta cercana, visual y con personalidad propia.</p>
-      </div>
-    </section>
+    <main class="page-content">
 
-    <section class="shows-section" id="shows">
-      <div class="section-label">02 / ESPECTÁCULOS</div>
-      <h2>Elige tu <em>aventura.</em></h2>
+      <!-- INICIO PICA -->
 
-      <div class="show-grid">
-        <article class="show-card">
-          <span class="show-number">01</span>
-          <h3>La Hermana<br><em>del Medio</em></h3>
-          <p>Espectáculo de magia con humor, juego y participación.</p>
-          <span class="show-link">Descubrir ↗</span>
-        </article>
-        <article class="show-card show-card-dark">
-          <span class="show-number">02</span>
-          <h3><em>PICA</em></h3>
-          <p>Un espectáculo con identidad propia, pensado para sorprender y jugar con lo imposible.</p>
-          <span class="show-link">Descubrir ↗</span>
-        </article>
-      </div>
-    </section>
+      <section
+        id="pica-inicio"
+        class="content-section active"
+      >
 
-    <section class="pica-contact" id="pica-contact">
-      <div class="section-label">03 / CONTACTO</div>
-      <h2>¿Preparamos<br><em>algo mágico?</em></h2>
-      <a href="mailto:tuemail@ejemplo.com" class="magic-contact">tuemail@ejemplo.com ↗</a>
-    </section>
+        <div class="pica-hero">
 
-    <footer class="site-footer pica-footer">
-      <span>© La Maga Pica</span>
-      <button data-switch="patricia">Volver a Patricia Martín ↗</button>
-    </footer>
-  </div>
+          <img
+            src="logo-pica.png"
+            class="pica-main-logo"
+            alt="La Maga Pica"
+          >
 
-  <!-- Modal de proyectos -->
-  <div class="project-modal" id="project-modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-window">
-      <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
-      <div class="modal-media" id="modal-media"></div>
-      <div class="modal-info">
-        <span id="modal-kicker"></span>
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
-      </div>
-    </div>
-  </div>
+          <p class="eyebrow">
+            MAGIA · ESPECTÁCULOS · EXPERIENCIAS
+          </p>
+
+          <h2>
+            La magia está<br>
+            <em>en todas partes.</em>
+          </h2>
+
+          <p class="large-text">
+            Bienvenidos al mundo de La Maga Pica.
+          </p>
+
+          <div class="big-experience">
+
+            <strong>+10</strong>
+
+            <div>
+              <span>AÑOS</span>
+              <small>DE EXPERIENCIA</small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SOBRE MI PICA -->
+
+      <section
+        id="pica-sobre-mi"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          SOBRE MÍ
+        </p>
+
+        <h2>
+          Detrás de La Maga Pica
+        </h2>
+
+        <div class="two-columns">
+
+          <div>
+
+            <p class="large-text">
+              La Maga Pica nace de una idea muy sencilla:
+              hacer que durante unos minutos todo parezca
+              posible.
+            </p>
+
+          </div>
+
+          <div>
+
+            <p>
+              Soy La Maga Pica y llevo más de diez años
+              dedicándome al mundo de la magia y los
+              espectáculos.
+            </p>
+
+            <p>
+              Mi objetivo es crear experiencias cercanas,
+              divertidas y sorprendentes, adaptando cada
+              espectáculo al público y al lugar.
+            </p>
+
+            <p>
+              Para mí, la magia no consiste solamente en
+              hacer aparecer o desaparecer cosas. Consiste
+              en provocar una emoción, una sorpresa y,
+              sobre todo, conseguir que alguien vuelva a
+              sentirse un poco niño.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ESPECTÁCULOS -->
+
+      <section
+        id="pica-espectaculos"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          ESPECTÁCULOS
+        </p>
+
+        <h2>
+          Dos formas<br>
+          de vivir la magia.
+        </h2>
+
+
+        <div class="magic-grid">
+
+          <article class="magic-card">
+
+            <span class="magic-number">
+              01
+            </span>
+
+            <h3>
+              La Hermana<br>
+              del Medio
+            </h3>
+
+            <p>
+              Un espectáculo de magia cercano,
+              divertido y pensado para sorprender
+              al público desde el primer momento.
+            </p>
+
+            <span class="magic-tag">
+              ESPECTÁCULO
+            </span>
+
+          </article>
+
+
+          <article class="magic-card">
+
+            <span class="magic-number">
+              02
+            </span>
+
+            <h3>
+              PICA
+            </h3>
+
+            <p>
+              Una propuesta de magia con personalidad,
+              humor y participación del público.
+              Una experiencia para recordar.
+            </p>
+
+            <span class="magic-tag">
+              SHOW
+            </span>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONTACTO PICA -->
+
+      <section
+        id="pica-contacto"
+        class="content-section"
+      >
+
+        <p class="eyebrow">
+          CONTACTO
+        </p>
+
+        <h2>
+          ¿Hacemos magia?
+        </h2>
+
+        <p class="large-text">
+          Para contrataciones, información sobre los
+          espectáculos o cualquier consulta:
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:lamagapica@gmail.com">
+            lamagapica@gmail.com
+          </a>
+
+          <a href="tel:TU_TELEFONO_AQUI">
+            TU_TELEFONO_AQUI
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </section>
+
 
   <script src="script.js"></script>
+
 </body>
 </html>
