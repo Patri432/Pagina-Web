@@ -3,13 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Portfolio de Patricia Martín y web de La Maga Pica."
-  >
+  <meta name="description" content="Portfolio de Patricia Martín y web de La Maga Pica.">
 
   <title>Patricia Martín · La Maga Pica</title>
 
@@ -17,1664 +12,484 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
+  <!-- =========================================================
+       PORTADA — DOS MUNDOS
+       ========================================================= -->
 
-<!-- =========================================================
-     PORTADA — DOS MUNDOS
-     ========================================================= -->
+  <main id="world-selector" class="world-selector">
 
-<main id="world-selector" class="world-selector">
-
-
-  <!-- =========================
-       MUNDO PATRICIA
-       ========================= -->
-
-  <section
-    class="world world-patricia"
-    data-world="patricia"
-  >
-
-    <div class="world-copy">
-
-      <p class="eyebrow">
-        PORTFOLIO PROFESIONAL
-      </p>
-
-      <h1>
-        Patricia<br>
-        <em>Martín</em>
-      </h1>
-
-      <p class="world-description">
-        3D · Animación · Diseño · Arte
-      </p>
-
-      <button
-        class="enter-button"
-        data-enter="patricia"
-      >
-        Entrar en mi portfolio
-        <span>↗</span>
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- PAPEL RASGADO -->
-
-  <div
-    class="paper-tear"
-    aria-hidden="true"
-  ></div>
-
-
-  <!-- =========================
-       MUNDO LA MAGA PICA
-       ========================= -->
-
-  <section
-    class="world world-pica"
-    data-world="pica"
-  >
-
-    <div
-      class="pica-pattern"
-      aria-hidden="true"
-    ></div>
-
-    <div class="world-copy">
-
-      <p class="eyebrow">
-        EL OTRO LADO DEL TELÓN
-      </p>
-
-      <img
-        class="pica-logo-cover"
-        src="assets/logo-pica.png"
-        alt="La Maga Pica"
-      >
-
-      <h2>
-        La Maga Pica
-      </h2>
-
-      <p class="world-description">
-        Magia · Ilusionismo · Espectáculo
-      </p>
-
-      <button
-        class="enter-button"
-        data-enter="pica"
-      >
-        Entrar en La Maga Pica
-        <span>↗</span>
-      </button>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-
-<!-- =========================================================
-     WEB DE PATRICIA MARTÍN
-     ========================================================= -->
-
-<div
-  id="patricia-site"
-  class="site site-patricia"
-  hidden
->
-
-
-  <!-- HEADER -->
-
-  <header class="site-header">
-
-    <a
-      href="#top"
-      class="brand"
-      data-home="patricia"
-    >
-
-      <span class="brand-name">
-        Patricia Martín
-      </span>
-
-      <span class="brand-role">
-        3D · ANIMATION · DESIGN
-      </span>
-
-    </a>
-
-
-    <nav>
-
-      <a href="#about-patricia">
-        Sobre mí
-      </a>
-
-      <a href="#services">
-        Servicios
-      </a>
-
-      <a href="#work-3d">
-        Portfolio
-      </a>
-
-      <a href="#experience">
-        Experiencia
-      </a>
-
-      <a href="#contact-patricia">
-        Contacto
-      </a>
-
-      <button
-        class="switch-world"
-        data-switch="pica"
-      >
-        La Maga Pica ↗
-      </button>
-
-    </nav>
-
-
-    <button
-      class="mobile-menu"
-      aria-label="Abrir menú"
-    >
-      ☰
-    </button>
-
-  </header>
-
-
-
-  <!-- HERO -->
-
-  <section
-    class="hero-patricia"
-    id="top"
-  >
-
-    <div class="hero-inner">
-
-      <p class="eyebrow">
-        PORTFOLIO DE DISEÑO 3D
-      </p>
-
-      <h1>
-        Creo, modelo<br>
-        <em>y doy vida.</em>
-      </h1>
-
-      <p class="hero-text">
-        Patricia Martín · Artista 3D especializada en
-        modelado, texturizado, iluminación y animación.
-      </p>
-
-      <div class="hero-actions">
-
-        <a
-          href="#work-3d"
-          class="scroll-link"
-        >
-          Ver trabajos
-          <span>↓</span>
-        </a>
-
-        <a
-          href="#contact-patricia"
-          class="text-link"
-        >
-          Contactar ↗
-        </a>
-
+    <!-- MUNDO PATRICIA -->
+    <section class="world world-patricia" data-world="patricia">
+      <div class="world-copy">
+        <p class="eyebrow">PORTFOLIO PROFESIONAL</p>
+        <h1>Patricia<br><em>Martín</em></h1>
+        <p class="world-description">3D · Animación · Diseño · Arte</p>
+        <button class="enter-button" data-enter="patricia">
+          Entrar en mi portfolio
+          <span>↗</span>
+        </button>
       </div>
+    </section>
 
-    </div>
+    <!-- PAPEL RASGADO -->
+    <div class="paper-tear" aria-hidden="true"></div>
 
-  </section>
+    <!-- MUNDO LA MAGA PICA -->
+    <section class="world world-pica" data-world="pica">
+      <div class="pica-pattern" aria-hidden="true"></div>
+      <div class="world-copy">
+        <p class="eyebrow">EL OTRO LADO DEL TELÓN</p>
+        <img class="pica-logo-cover" src="assets/logo-pica.png" alt="La Maga Pica">
+        <h2>La Maga Pica</h2>
+        <p class="world-description">Magia · Ilusionismo · Espectáculo</p>
+        <button class="enter-button" data-enter="pica">
+          Entrar en La Maga Pica
+          <span>↗</span>
+        </button>
+      </div>
+    </section>
 
-
-
-  <!-- SOBRE MÍ -->
-
-  <section
-    class="intro-section"
-    id="about-patricia"
-  >
-
-    <div class="section-label">
-      01 / SOBRE MÍ
-    </div>
-
-    <div class="intro-content">
-
-      <h2>
-        Diseño mundos,<br>
-        <em>objeto a objeto.</em>
-      </h2>
-
-      <p>
-        Soy Patricia Martín, artista 3D con formación superior
-        en Animación 3D y experiencia práctica en modelado
-        de productos, entornos y props.
-      </p>
-
-      <p>
-        Trabajo con una mirada orientada al detalle,
-        la fidelidad visual y la presentación final
-        de cada pieza.
-      </p>
-
-      <p>
-        Mi formación y experiencia combinan modelado,
-        texturizado, iluminación y animación.
-      </p>
-
-    </div>
-
-  </section>
-
+  </main>
 
 
   <!-- =========================================================
-       SERVICIOS
+       WEB DE PATRICIA MARTÍN
        ========================================================= -->
 
-  <section
-    class="services-section"
-    id="services"
-  >
+  <div id="patricia-site" class="site site-patricia" hidden>
 
-    <div class="section-heading">
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="#top" class="brand" data-home="patricia">
+        <span class="brand-name">Patricia Martín</span>
+        <span class="brand-role">3D · ANIMATION · DESIGN</span>
+      </a>
 
+      <nav>
+        <a href="#about-patricia">Sobre mí</a>
+        <a href="#services">Servicios</a>
+        <a href="#work-3d">Portfolio</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#contact-patricia">Contacto</a>
+        <button class="switch-world" data-switch="pica">La Maga Pica ↗</button>
+      </nav>
+
+      <button class="mobile-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-patricia" id="top">
+      <div class="hero-inner">
+        <p class="eyebrow">PORTFOLIO DE DISEÑO 3D</p>
+        <h1>Creo, modelo<br><em>y doy vida.</em></h1>
+        <p class="hero-text">Patricia Martín · Artista 3D especializada en modelado, texturizado, iluminación y animación.</p>
+        <div class="hero-actions">
+          <a href="#work-3d" class="scroll-link">Ver trabajos <span>↓</span></a>
+          <a href="#contact-patricia" class="text-link">Contactar ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="intro-section" id="about-patricia">
+      <div class="section-label">01 / SOBRE MÍ</div>
+      <div class="intro-content">
+        <h2>Diseño mundos,<br><em>objeto a objeto.</em></h2>
+        <p>Soy Patricia Martín, artista 3D con formación superior en Animación 3D y experiencia práctica en modelado de productos, entornos y props.</p>
+        <p>Trabajo con una mirada orientada al detalle, la fidelidad visual y la presentación final de cada pieza.</p>
+        <p>Mi formación y experiencia combinan modelado, texturizado, iluminación y animación.</p>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services-section" id="services">
+      <div class="section-heading">
+        <div>
+          <div class="section-label">02 / SERVICIOS</div>
+          <h2>Lo que<br><em>hago.</em></h2>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <span>01</span>
+          <h3>Modelado<br>3D</h3>
+          <p>Modelado de productos y entornos con topología optimizada y fidelidad visual.</p>
+        </article>
+        <article class="service-card">
+          <span>02</span>
+          <h3>Texturizado<br>e iluminación</h3>
+          <p>Texturizado PBR, materiales y acabados realistas. Preparación e iluminación de escenas.</p>
+        </article>
+        <article class="service-card">
+          <span>03</span>
+          <h3>Animación<br>3D</h3>
+          <p>Trabajo orientado a piezas audiovisuales, movimiento y presentación final.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOFTWARE -->
+    <section class="software-section">
+      <div class="section-label">SOFTWARE</div>
+      <div class="software-list">
+        <span>Autodesk Maya</span>
+        <span>Blender</span>
+        <span>Lumion</span>
+        <span>AutoCAD</span>
+        <span>Inventor</span>
+        <span>KeyShot</span>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO 3D -->
+    <section class="portfolio-section" id="work-3d">
+      <div class="section-heading">
+        <div>
+          <div class="section-label">03 / PORTFOLIO 3D</div>
+          <h2>Environment <em>& Props</em></h2>
+        </div>
+        <p>Selección de trabajos realizados durante mi periodo de prácticas en <strong>Render Studio 3D</strong>, centrados en espacios, arquitectura, mobiliario y elementos urbanos.</p>
+      </div>
+
+      <!-- FILTROS -->
+      <div class="category-tabs" role="tablist">
+        <button class="category-tab active" data-filter="environment">Environment</button>
+        <button class="category-tab" data-filter="props">Props</button>
+      </div>
+
+      <!-- GALERÍA -->
+      <div class="project-grid" id="project-grid">
+        <article class="project-card project-item" data-category="environment">
+          <button class="project-image-button" data-project="edificio">
+            <img src="assets/edificio-residencial.webp" alt="Edificio residencial modelado en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>ENVIRONMENT / 01</span>
+            <h3>Edificio residencial</h3>
+            <p>Modelado y visualización arquitectónica.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-item" data-category="environment">
+          <button class="project-image-button" data-project="parque">
+            <img src="assets/parque.webp" alt="Parque urbano modelado en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>ENVIRONMENT / 02</span>
+            <h3>Parque urbano</h3>
+            <p>Creación de entorno y elementos de espacio público.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-item" data-category="environment">
+          <button class="project-image-button" data-project="zona-juegos">
+            <img src="assets/zona-juegos.webp" alt="Zona de juegos modelada en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>ENVIRONMENT / 03</span>
+            <h3>Zona de juegos</h3>
+            <p>Modelado de elementos de espacio exterior.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-item" data-category="props" hidden>
+          <button class="project-image-button" data-project="cocina">
+            <img src="assets/cocina-01.png" alt="Cocina modelada en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>PROPS / 01</span>
+            <h3>Cocina</h3>
+            <p>Modelado de mobiliario e interiorismo.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-item" data-category="props" hidden>
+          <button class="project-image-button" data-project="cajon">
+            <img src="assets/cocina-02.png" alt="Cajón y cubertería modelados en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>PROPS / 02</span>
+            <h3>Cajón y cubertería</h3>
+            <p>Modelado de objetos y detalle de producto.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-item" data-category="props" hidden>
+          <button class="project-image-button" data-project="farola">
+            <img src="assets/farola.png" alt="Farola urbana modelada en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>PROPS / 03</span>
+            <h3>Farola urbana</h3>
+            <p>Modelado de elemento urbano.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-item" data-category="props" hidden>
+          <button class="project-image-button" data-project="fuente">
+            <img src="assets/fuente.png" alt="Fuente urbana modelada en 3D">
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-meta">
+            <span>PROPS / 04</span>
+            <h3>Fuente urbana</h3>
+            <p>Modelado de elemento para entorno exterior.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="experience-section" id="experience">
       <div>
-
-        <div class="section-label">
-          02 / SERVICIOS
-        </div>
-
-        <h2>
-          Lo que<br>
-          <em>hago.</em>
-        </h2>
-
+        <div class="section-label">04 / EXPERIENCIA</div>
+        <h2>Formación,<br><em>experiencia y proyectos.</em></h2>
       </div>
 
-    </div>
-
-
-    <div class="service-grid">
-
-
-      <article class="service-card">
-
-        <span>01</span>
-
-        <h3>
-          Modelado<br>
-          3D
-        </h3>
-
-        <p>
-          Modelado de productos y entornos con
-          topología optimizada y fidelidad visual.
-        </p>
-
-      </article>
-
-
-      <article class="service-card">
-
-        <span>02</span>
-
-        <h3>
-          Texturizado<br>
-          e iluminación
-        </h3>
-
-        <p>
-          Texturizado PBR, materiales y acabados
-          realistas. Preparación e iluminación
-          de escenas.
-        </p>
-
-      </article>
-
-
-      <article class="service-card">
-
-        <span>03</span>
-
-        <h3>
-          Animación<br>
-          3D
-        </h3>
-
-        <p>
-          Trabajo orientado a piezas audiovisuales,
-          movimiento y presentación final.
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       SOFTWARE
-       ========================================================= -->
-
-  <section class="software-section">
-
-    <div class="section-label">
-      SOFTWARE
-    </div>
-
-    <div class="software-list">
-
-      <span>Autodesk Maya</span>
-      <span>Blender</span>
-      <span>Lumion</span>
-      <span>AutoCAD</span>
-      <span>Inventor</span>
-      <span>KeyShot</span>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       PORTFOLIO 3D
-       ========================================================= -->
-
-  <section
-    class="portfolio-section"
-    id="work-3d"
-  >
-
-    <div class="section-heading">
-
-      <div>
-
-        <div class="section-label">
-          03 / PORTFOLIO 3D
-        </div>
-
-        <h2>
-          Environment
-          <em>& Props</em>
-        </h2>
-
+      <div class="timeline">
+        <article class="timeline-item">
+          <span>2026</span>
+          <div>
+            <h3>ASCENDER</h3>
+            <p>Modelado 3D de butacas.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>2026</span>
+          <div>
+            <h3>SpainSkills</h3>
+            <p>Representación de La Rioja.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>2026</span>
+          <div>
+            <h3>KORE Formación</h3>
+            <p>Curso de recreación en 3D del patrimonio.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>2025</span>
+          <div>
+            <h3>Render Estudio 3D</h3>
+            <p>Prácticas como diseñadora 3D. Modelado, preparación de escena y presentación.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>2025</span>
+          <div>
+            <h3>RiojaSkills</h3>
+            <p>1er premio en Animación 3D.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span>2023–2025</span>
+          <div>
+            <h3>F.P. Superior de Animación 3D</h3>
+            <p>Formación especializada en animación y creación 3D.</p>
+          </div>
+        </article>
       </div>
-
-      <p>
-        Selección de trabajos realizados durante
-        mi periodo de prácticas en
-        <strong>Render Studio 3D</strong>,
-        centrados en espacios, arquitectura,
-        mobiliario y elementos urbanos.
-      </p>
-
-    </div>
-
-
-
-    <!-- FILTROS -->
-
-    <div
-      class="category-tabs"
-      role="tablist"
-    >
-
-      <button
-        class="category-tab active"
-        data-filter="environment"
-      >
-        Environment
-      </button>
-
-      <button
-        class="category-tab"
-        data-filter="props"
-      >
-        Props
-      </button>
-
-    </div>
-
-
-
-    <!-- GALERÍA -->
-
-    <div
-      class="project-grid"
-      id="project-grid"
-    >
-
-
-      <!-- =========================
-           ENVIRONMENT
-           ========================= -->
-
-
-      <article
-        class="project-card project-item"
-        data-category="environment"
-      >
-
-        <button
-          class="project-image-button"
-          data-project="edificio"
-        >
-
-          <img
-            src="assets/edificio-residencial.webp"
-            alt="Edificio residencial modelado en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            ENVIRONMENT / 01
-          </span>
-
-          <h3>
-            Edificio residencial
-          </h3>
-
-          <p>
-            Modelado y visualización arquitectónica.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article
-        class="project-card project-item"
-        data-category="environment"
-      >
-
-        <button
-          class="project-image-button"
-          data-project="parque"
-        >
-
-          <img
-            src="assets/parque.webp"
-            alt="Parque urbano modelado en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            ENVIRONMENT / 02
-          </span>
-
-          <h3>
-            Parque urbano
-          </h3>
-
-          <p>
-            Creación de entorno y elementos
-            de espacio público.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article
-        class="project-card project-item"
-        data-category="environment"
-      >
-
-        <button
-          class="project-image-button"
-          data-project="zona-juegos"
-        >
-
-          <img
-            src="assets/zona-juegos.webp"
-            alt="Zona de juegos modelada en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            ENVIRONMENT / 03
-          </span>
-
-          <h3>
-            Zona de juegos
-          </h3>
-
-          <p>
-            Modelado de elementos de
-            espacio exterior.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- =========================
-           PROPS
-           ========================= -->
-
-
-      <article
-        class="project-card project-item"
-        data-category="props"
-        hidden
-      >
-
-        <button
-          class="project-image-button"
-          data-project="cocina"
-        >
-
-          <img
-            src="assets/cocina-01.png"
-            alt="Cocina modelada en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            PROPS / 01
-          </span>
-
-          <h3>
-            Cocina
-          </h3>
-
-          <p>
-            Modelado de mobiliario e
-            interiorismo.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article
-        class="project-card project-item"
-        data-category="props"
-        hidden
-      >
-
-        <button
-          class="project-image-button"
-          data-project="cajon"
-        >
-
-          <img
-            src="assets/cocina-02.png"
-            alt="Cajón y cubertería modelados en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            PROPS / 02
-          </span>
-
-          <h3>
-            Cajón y cubertería
-          </h3>
-
-          <p>
-            Modelado de objetos y
-            detalle de producto.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article
-        class="project-card project-item"
-        data-category="props"
-        hidden
-      >
-
-        <button
-          class="project-image-button"
-          data-project="farola"
-        >
-
-          <img
-            src="assets/farola.png"
-            alt="Farola urbana modelada en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            PROPS / 03
-          </span>
-
-          <h3>
-            Farola urbana
-          </h3>
-
-          <p>
-            Modelado de elemento urbano.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article
-        class="project-card project-item"
-        data-category="props"
-        hidden
-      >
-
-        <button
-          class="project-image-button"
-          data-project="fuente"
-        >
-
-          <img
-            src="assets/fuente.png"
-            alt="Fuente urbana modelada en 3D"
-          >
-
-          <span class="project-arrow">
-            ↗
-          </span>
-
-        </button>
-
-        <div class="project-meta">
-
-          <span>
-            PROPS / 04
-          </span>
-
-          <h3>
-            Fuente urbana
-          </h3>
-
-          <p>
-            Modelado de elemento
-            para entorno exterior.
-          </p>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       EXPERIENCIA
-       ========================================================= -->
-
-  <section
-    class="experience-section"
-    id="experience"
-  >
-
-    <div>
-
-      <div class="section-label">
-        04 / EXPERIENCIA
-      </div>
-
-      <h2>
-        Formación,<br>
-        <em>experiencia y proyectos.</em>
-      </h2>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-      <article class="timeline-item">
-
-        <span>
-          2026
-        </span>
-
-        <div>
-
-          <h3>
-            ASCENDER
-          </h3>
-
-          <p>
-            Modelado 3D de butacas.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="timeline-item">
-
-        <span>
-          2026
-        </span>
-
-        <div>
-
-          <h3>
-            SpainSkills
-          </h3>
-
-          <p>
-            Representación de La Rioja.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="timeline-item">
-
-        <span>
-          2026
-        </span>
-
-        <div>
-
-          <h3>
-            KORE Formación
-          </h3>
-
-          <p>
-            Curso de recreación en 3D
-            del patrimonio.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="timeline-item">
-
-        <span>
-          2025
-        </span>
-
-        <div>
-
-          <h3>
-            Render Estudio 3D
-          </h3>
-
-          <p>
-            Prácticas como diseñadora 3D.
-            Modelado, preparación de escena
-            y presentación.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="timeline-item">
-
-        <span>
-          2025
-        </span>
-
-        <div>
-
-          <h3>
-            RiojaSkills
-          </h3>
-
-          <p>
-            1er premio en Animación 3D.
-          </p>
-
-        </div>
-
-      </article>
-
-
-
-      <article class="timeline-item">
-
-        <span>
-          2023–2025
-        </span>
-
-        <div>
-
-          <h3>
-            F.P. Superior de Animación 3D
-          </h3>
-
-          <p>
-            Formación especializada
-            en animación y creación 3D.
-          </p>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       CONTACTO PATRICIA
-       ========================================================= -->
-
-  <section
-    class="contact-section"
-    id="contact-patricia"
-  >
-
-    <div class="section-label">
-      05 / CONTACTO
-    </div>
-
-    <h2>
-      ¿Hablamos?
-    </h2>
-
-    <p>
-      Si quieres conocer más sobre mi trabajo,
-      plantear un proyecto o contactar conmigo
-      profesionalmente, puedes escribirme.
-    </p>
-
-    <a
-      class="contact-email"
-      href="mailto:patriciaanima3d@gmail.com"
-    >
-      patriciaanima3d@gmail.com ↗
-    </a>
-
-    <a
-      class="contact-phone"
-      href="tel:+34628243657"
-    >
-      628 243 657
-    </a>
-
-  </section>
-
-
-
-  <!-- FOOTER -->
-
-  <footer class="site-footer">
-
-    <span>
-      © Patricia Martín
-    </span>
-
-    <button
-      data-switch="pica"
-    >
-      Descubrir La Maga Pica ↗
-    </button>
-
-  </footer>
-
-
-</div>
-
-
-
-
-
-<!-- =========================================================
-     WEB DE LA MAGA PICA
-     ========================================================= -->
-
-<div
-  id="pica-site"
-  class="site site-pica"
-  hidden
->
-
-
-  <!-- HEADER -->
-
-  <header class="site-header pica-header">
-
-    <a
-      href="#pica-top"
-      class="brand pica-brand"
-    >
-
-      <img
-        src="assets/logo-pica.png"
-        alt="La Maga Pica"
-      >
-
-      <span class="brand-name">
-        La Maga Pica
-      </span>
-
-    </a>
-
-
-    <nav>
-
-      <a href="#pica-about">
-        Sobre mí
-      </a>
-
-      <a href="#shows">
-        Espectáculos
-      </a>
-
-      <a href="#pica-contact">
-        Contacto
-      </a>
-
-      <button
-        class="switch-world"
-        data-switch="patricia"
-      >
-        Patricia Martín ↗
-      </button>
-
-    </nav>
-
-
-    <button
-      class="mobile-menu"
-      aria-label="Abrir menú"
-    >
-      ☰
-    </button>
-
-  </header>
-
-
-
-  <!-- =========================================================
-       HERO PICA
-       ========================================================= -->
-
-  <section
-    class="pica-hero"
-    id="pica-top"
-  >
-
-    <div
-      class="magic-sparkles"
-      aria-hidden="true"
-    >
-      ✦ · ✧ · ✦
-    </div>
-
-
-    <img
-      src="assets/logo-pica.png"
-      alt="La Maga Pica"
-      class="pica-hero-logo"
-    >
-
-
-    <p class="eyebrow">
-      MAGIA · ILUSIONISMO · ESPECTÁCULO
-    </p>
-
-
-    <h1>
-      La Maga
-      <em>Pica</em>
-    </h1>
-
-
-    <p>
-      Magia, memoria y una forma diferente
-      de mirar lo imposible.
-    </p>
-
-
-    <!-- MÁS DE 10 AÑOS SOLO AQUÍ -->
-
-    <div class="pica-experience">
-
-      <strong>
-        +10
-      </strong>
-
-      <span>
-        AÑOS DE<br>
-        EXPERIENCIA
-      </span>
-
-    </div>
-
-
-    <a
-      href="#shows"
-      class="magic-button"
-    >
-      Ver espectáculos
-      ↘
-    </a>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       SOBRE MÍ
-       ========================================================= -->
-
-  <section
-    class="pica-about"
-    id="pica-about"
-  >
-
-    <div class="section-label">
-      01 / SOBRE MÍ
-    </div>
-
-
-    <div class="pica-about-content">
-
-      <h2>
-        Soy Patricia Martín,
-        <em>La Maga Pica.</em>
-      </h2>
-
-
-      <p>
-        Soy Patricia Martín, La Maga Pica, ilusionista.
-      </p>
-
-
-      <p>
-        Mi identidad artística nace como un homenaje al legado
-        de mi abuelo, quien esculpía la piedra y era conocido
-        como "El Pica". De su oficio heredo la premisa que guía
-        mi trabajo sobre el escenario: esculpir la ilusión con
-        paciencia, técnica y precisión hasta transformar la
-        materia cotidiana en una experiencia extraordinaria.
-      </p>
-
-
-      <p>
-        Mi repertorio abarca desde espectáculos de escenario
-        y galas teatrales hasta formatos de magia de cerca
-        (Close-up) para eventos corporativos y culturales.
-      </p>
-
-
-      <p>
-        Mi objetivo se centra en dignificar el arte de la magia
-        como una disciplina escénica contemporánea, capaz de
-        sorprender a públicos exigentes y generar momentos
-        memorables.
-      </p>
-
-
-      <p>
-        Abierta a programación en teatros, festivales,
-        eventos corporativos y proyectos de creación cultural.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       EXPERIENCIA PICA
-       ========================================================= -->
-
-  <section class="pica-experience-section">
-
-    <div class="pica-big-number">
-      +10
-    </div>
-
-
-    <div>
-
-      <div class="section-label">
-        EXPERIENCIA
-      </div>
-
-      <h2>
-        Más de diez años
-        <em>esculpiendo la ilusión.</em>
-      </h2>
-
-      <p>
-        Una trayectoria dedicada al ilusionismo,
-        la creación escénica y la búsqueda de
-        nuevas formas de conectar con el público.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       ESPECTÁCULOS
-       ========================================================= -->
-
-  <section
-    class="shows-section"
-    id="shows"
-  >
-
-    <div class="section-label">
-      02 / ESPECTÁCULOS
-    </div>
-
-
-    <h2>
-      Magia con historia,
-      <em>magia con identidad.</em>
-    </h2>
-
-
-
-    <!-- =====================================================
-         LA HERMANA DEL MEDIO
-         ===================================================== -->
-
-    <article class="show-detail">
-
-      <div class="show-detail-header">
-
-        <span class="show-number">
-          01 / ESPECTÁCULO
-        </span>
-
-        <h3>
-          La hermana
-          <em>del medio</em>
-        </h3>
-
-        <p class="show-subtitle">
-          Espectáculo de magia y narrativa escénica
-        </p>
-
-      </div>
-
-
-      <div class="show-detail-info">
-
-        <p>
-          <strong>
-            Dramaturgia e interpretación:
-          </strong>
-          Patricia Martín (La Maga Pica)
-        </p>
-
-        <p>
-          <strong>
-            Formato:
-          </strong>
-          Magia de escenario / Teatro unipersonal
-        </p>
-
-        <p>
-          <strong>
-            Público objetivo:
-          </strong>
-          Espectáculo familiar.
-        </p>
-
-      </div>
-
-
-      <div class="show-text">
-
-        <h4>
-          Sinopsis
-        </h4>
-
-        <p>
-          La hermana del medio es una propuesta de
-          ilusionismo contemporáneo que explora el lugar
-          que ocupamos en la familia, las memorias compartidas
-          y las dinámicas invisibles que definen quiénes somos.
-        </p>
-
-        <p>
-          En la arquitectura familiar, el puesto del medio
-          suele ser el del puente, el equilibrio o el enigma.
-          Partiendo de esta premisa autobiográfica, La Maga Pica
-          teje una cuidada dramaturgia donde los objetos cotidianos,
-          las barajas de cartas, las cuerdas y los enigmas mentales
-          se transforman en símbolos de la identidad, la atención
-          y el afecto.
-        </p>
-
-
-        <h4>
-          Características de la propuesta
-        </h4>
-
-
-        <ul>
-
-          <li>
-            <strong>
-              Ilusionismo con relato:
-            </strong>
-            La técnica no funciona como un fin en sí misma,
-            sino como el lenguaje para contar una historia
-            con la que cualquier espectador puede sentirse
-            identificado.
-          </li>
-
-
-          <li>
-            <strong>
-              Diversidad de disciplinas:
-            </strong>
-            Combina el rigor de la cartomagia de alto nivel,
-            la tensión psicológica del mentalismo y la
-            elegancia del ilusionismo de escenario.
-          </li>
-
-
-          <li>
-            <strong>
-              Participación activa:
-            </strong>
-            El público no es un mero espectador; sus decisiones
-            y recuerdos se convierten en parte fundamental
-            del desarrollo del espectáculo.
-          </li>
-
-
-          <li>
-            <strong>
-              Estética y precisión:
-            </strong>
-            Con una puesta en escena cuidada al detalle,
-            el montaje equilibra momentos de asombro imposible
-            con destellos de humor, nostalgia y complicidad.
-          </li>
-
-        </ul>
-
-
-        <p>
-          Un espectáculo diseñado para tanto cumpleaños,
-          bodas o comuniones como para teatros, ciclos
-          culturales y eventos personales que buscan una
-          experiencia de magia con alma, emoción y un
-          alto impacto visual.
-        </p>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- =====================================================
-         PICA
-         ===================================================== -->
-
-    <article
-      class="show-detail show-detail-pica"
-    >
-
-      <div class="show-detail-header">
-
-        <span class="show-number">
-          02 / ESPECTÁCULO
-        </span>
-
-        <h3>
-          <em>PICA</em>
-        </h3>
-
-        <p class="show-subtitle">
-          Magia, memoria y el arte de esculpir la ilusión
-        </p>
-
-      </div>
-
-
-      <div class="show-detail-info">
-
-        <p>
-          <strong>
-            Dramaturgia e interpretación:
-          </strong>
-          Patricia Martín (La Maga Pica)
-        </p>
-
-        <p>
-          <strong>
-            Formato:
-          </strong>
-          Magia de escenario / Teatro de pequeño y
-          mediano formato
-        </p>
-
-        <p>
-          <strong>
-            Público objetivo:
-          </strong>
-          Espectáculo familiar
-        </p>
-
-      </div>
-
-
-      <div class="show-text">
-
-        <h4>
-          Sinopsis
-        </h4>
-
-        <p>
-          PICA es el espectáculo más personal de Patricia Martín,
-          un viaje escénico donde la magia se entrelaza con el
-          homenaje familiar, la memoria y la artesanía.
-          La propuesta toma como punto de partida la figura
-          de su abuelo, conocido popularmente como "El Pica"
-          por su oficio de picapedrero.
-        </p>
-
-        <p>
-          En PICA, los objetos de taller y la materia prima
-          cobran una dimensión simbólica. La maza, la piedra,
-          el metal y los naipes se convierten en herramientas
-          para desafiar la lógica, explorando la idea de que
-          la verdadera magia exige la misma precisión,
-          paciencia y dedicación que el oficio tradicional
-          de esculpir.
-        </p>
-
-
-        <h4>
-          Características de la propuesta
-        </h4>
-
-
-        <ul>
-
-          <li>
-            <strong>
-              Eje temático y emotivo:
-            </strong>
-            Un homenaje a las raíces y al legado familiar
-            que aporta al espectáculo un peso poético
-            y una narrativa sólida.
-          </li>
-
-
-          <li>
-            <strong>
-              Impacto visual y simbólico:
-            </strong>
-            Integra elementos escénicos singulares,
-            como utensilios de mampostería, para construir
-            ilusiones de gran formato, tensión y ritmo.
-          </li>
-
-
-          <li>
-            <strong>
-              Variedad de efectos:
-            </strong>
-            Combina rutinas de gran impacto visual,
-            demostraciones de precisión mental y momentos
-            de cartomagia adaptada a la escena.
-          </li>
-
-
-          <li>
-            <strong>
-              Conexión con el espectador:
-            </strong>
-            Una puesta en escena cercana y participativa
-            donde el público acompaña a la artista en la
-            búsqueda del misterio oculto tras la materia.
-          </li>
-
-        </ul>
-
-
-        <p>
-          Una propuesta potente y elegante, especialmente
-          diseñada para festivales, certámenes teatrales
-          y redes de teatros que apuestan por la magia de
-          autor con identidad propia.
-        </p>
-
-      </div>
-
-    </article>
-
-  </section>
-
-
-
-  <!-- =========================================================
-       CONTACTO PICA
-       ========================================================= -->
-
-  <section
-    class="pica-contact"
-    id="pica-contact"
-  >
-
-    <div class="section-label">
-      03 / CONTACTO
-    </div>
-
-
-    <h2>
-      ¿Preparamos
-      <em>algo mágico?</em>
-    </h2>
-
-
-    <p>
-      Para contrataciones, programación,
-      información sobre los espectáculos
-      o cualquier consulta:
-    </p>
-
-
-    <a
-      href="mailto:lamagapica@gmail.com"
-      class="magic-contact"
-    >
-      lamagapica@gmail.com ↗
-    </a>
-
-
-    <a
-      href="tel:+34628243657"
-      class="magic-phone"
-    >
-      628 243 657
-    </a>
-
-  </section>
-
-
-
-  <!-- FOOTER PICA -->
-
-  <footer
-    class="site-footer pica-footer"
-  >
-
-    <span>
-      © La Maga Pica
-    </span>
-
-    <button
-      data-switch="patricia"
-    >
-      Volver a Patricia Martín ↗
-    </button>
-
-  </footer>
-
-
-</div>
-
-
-
-<!-- =========================================================
-     MODAL DE PROYECTOS 3D
-     ========================================================= -->
-
-<div
-  class="project-modal"
-  id="project-modal"
-  aria-hidden="true"
->
-
-  <div
-    class="modal-backdrop"
-    data-close-modal
-  ></div>
-
-
-  <div class="modal-window">
-
-    <button
-      class="modal-close"
-      data-close-modal
-      aria-label="Cerrar"
-    >
-      ×
-    </button>
-
-
-    <div
-      class="modal-media"
-      id="modal-media"
-    ></div>
-
-
-    <div class="modal-info">
-
-      <span id="modal-kicker"></span>
-
-      <h2 id="modal-title"></h2>
-
-      <p id="modal-description"></p>
-
-    </div>
+    </section>
+
+    <!-- CONTACTO PATRICIA -->
+    <section class="contact-section" id="contact-patricia">
+      <div class="section-label">05 / CONTACTO</div>
+      <h2>¿Hablamos?</h2>
+      <p>Si quieres conocer más sobre mi trabajo, plantear un proyecto o contactar conmigo profesionalmente, puedes escribirme.</p>
+      <a class="contact-email" href="mailto:patriciaanima3d@gmail.com">patriciaanima3d@gmail.com ↗</a>
+      <a class="contact-phone" href="tel:+34628243657">628 243 657</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <span>© Patricia Martín</span>
+      <button data-switch="pica">Descubrir La Maga Pica ↗</button>
+    </footer>
 
   </div>
 
-</div>
+
+  <!-- =========================================================
+       WEB DE LA MAGA PICA
+       ========================================================= -->
+
+  <div id="pica-site" class="site site-pica" hidden>
+
+    <!-- HEADER -->
+    <header class="site-header pica-header">
+      <a href="#pica-top" class="brand pica-brand">
+        <img src="assets/logo-pica.png" alt="La Maga Pica">
+        <span class="brand-name">La Maga Pica</span>
+      </a>
+
+      <nav>
+        <a href="#pica-about">Sobre mí</a>
+        <a href="#shows">Espectáculos</a>
+        <a href="#pica-contact">Contacto</a>
+        <button class="switch-world" data-switch="patricia">Patricia Martín ↗</button>
+      </nav>
+
+      <button class="mobile-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </header>
+
+    <!-- HERO PICA -->
+    <section class="pica-hero" id="pica-top">
+      <div class="magic-sparkles" aria-hidden="true">✦ · ✧ · ✦</div>
+      <img src="assets/logo-pica.png" alt="La Maga Pica" class="pica-hero-logo">
+      <p class="eyebrow">MAGIA · ILUSIONISMO · ESPECTÁCULO</p>
+      <h1>La Maga <em>Pica</em></h1>
+      <p>Magia, memoria y una forma diferente de mirar lo imposible.</p>
+
+      <div class="pica-experience">
+        <strong>+10</strong>
+        <span>AÑOS DE<br>EXPERIENCIA</span>
+      </div>
+
+      <a href="#shows" class="magic-button">Ver espectáculos ↘</a>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="pica-about" id="pica-about">
+      <div class="section-label">01 / SOBRE MÍ</div>
+      <div class="pica-about-content">
+        <h2>Soy Patricia Martín, <em>La Maga Pica.</em></h2>
+        <p>Soy Patricia Martín, La Maga Pica, ilusionista.</p>
+        <p>Mi identidad artística nace como un homenaje al legado de mi abuelo, quien esculpía la piedra y era conocido como "El Pica". De su oficio heredo la premisa que guía mi trabajo sobre el escenario: esculpir la ilusión con paciencia, técnica y precisión hasta transformar la materia cotidiana en una experiencia extraordinaria.</p>
+        <p>Mi repertorio abarca desde espectáculos de escenario y galas teatrales hasta formatos de magia de cerca (Close-up) para eventos corporativos y culturales.</p>
+        <p>Mi objetivo se centra en dignificar el arte de la magia como una disciplina escénica contemporánea, capaz de sorprender a públicos exigentes y generar momentos memorables.</p>
+        <p>Abierta a programación en teatros, festivales, eventos corporativos y proyectos de creación cultural.</p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA PICA -->
+    <section class="pica-experience-section">
+      <div class="pica-big-number">+10</div>
+      <div>
+        <div class="section-label">EXPERIENCIA</div>
+        <h2>Más de diez años <em>esculpiendo la ilusión.</em></h2>
+        <p>Una trayectoria dedicada al ilusionismo, la creación escénica y la búsqueda de nuevas formas de conectar con el público.</p>
+      </div>
+    </section>
+
+    <!-- ESPECTÁCULOS -->
+    <section class="shows-section" id="shows">
+      <div class="section-label">02 / ESPECTÁCULOS</div>
+      <h2>Magia con historia, <em>magia con identidad.</em></h2>
+
+      <!-- LA HERMANA DEL MEDIO -->
+      <article class="show-detail">
+        <div class="show-detail-header">
+          <span class="show-number">01 / ESPECTÁCULO</span>
+          <h3>La hermana <em>del medio</em></h3>
+          <p class="show-subtitle">Espectáculo de magia y narrativa escénica</p>
+        </div>
+
+        <div class="show-detail-info">
+          <p><strong>Dramaturgia e interpretación:</strong> Patricia Martín (La Maga Pica)</p>
+          <p><strong>Formato:</strong> Magia de escenario / Teatro unipersonal</p>
+          <p><strong>Público objetivo:</strong> Espectáculo familiar</p>
+        </div>
+
+        <div class="show-text">
+          <h4>Sinopsis</h4>
+          <p>La hermana del medio es una propuesta de ilusionismo contemporáneo que explora el lugar que ocupamos en la familia, las memorias compartidas y las dinámicas invisibles que definen quiénes somos.</p>
+          <p>En la arquitectura familiar, el puesto del medio suele ser el del puente, el equilibrio o el enigma. Partiendo de esta premisa autobiográfica, La Maga Pica teje una cuidada dramaturgia donde los objetos cotidianos, las barajas de cartas, las cuerdas y los enigmas mentales se transforman en símbolos de la identidad, la atención y el afecto.</p>
+
+          <h4>Características de la propuesta</h4>
+          <ul>
+            <li><strong>Ilusionismo con relato:</strong> La técnica no funciona como un fin en sí misma, sino como el lenguaje para contar una historia con la que cualquier espectador puede sentirse identificado.</li>
+            <li><strong>Diversidad de disciplinas:</strong> Combina el rigor de la cartomagia de alto nivel, la tensión psicológica del mentalismo y la elegancia del ilusionismo de escenario.</li>
+            <li><strong>Participación activa:</strong> El público no es un mero espectador; sus decisiones y recuerdos se convierten en parte fundamental del desarrollo del espectáculo.</li>
+            <li><strong>Estética y precisión:</strong> Con una puesta en escena cuidada al detalle, el montaje equilibra momentos de asombro imposible con destellos de humor, nostalgia y complicidad.</li>
+          </ul>
+
+          <p>Un espectáculo diseñado tanto para cumpleaños, bodas o comuniones como para teatros, ciclos culturales y eventos personales que buscan una experiencia de magia con alma, emoción y un alto impacto visual.</p>
+        </div>
+      </article>
+
+      <!-- PICA -->
+      <article class="show-detail show-detail-pica">
+        <div class="show-detail-header">
+          <span class="show-number">02 / ESPECTÁCULO</span>
+          <h3><em>PICA</em></h3>
+          <p class="show-subtitle">Magia, memoria y el arte de esculpir la ilusión</p>
+        </div>
+
+        <div class="show-detail-info">
+          <p><strong>Dramaturgia e interpretación:</strong> Patricia Martín (La Maga Pica)</p>
+          <p><strong>Formato:</strong> Magia de escenario / Teatro de pequeño y mediano formato</p>
+          <p><strong>Público objetivo:</strong> Espectáculo familiar</p>
+        </div>
+
+        <div class="show-text">
+          <h4>Sinopsis</h4>
+          <p>PICA es el espectáculo más personal de Patricia Martín, un viaje escénico donde la magia se entrelaza con el homenaje familiar, la memoria y la artesanía. La propuesta toma como punto de partida la figura de su abuelo, conocido popularmente como "El Pica" por su oficio de picapedrero.</p>
+          <p>En PICA, los objetos de taller y la materia prima cobran una dimensión simbólica. La maza, la piedra, el metal y los naipes se convierten en herramientas para desafiar la lógica, explorando la idea de que la verdadera magia exige la misma precisión, paciencia y dedicación que el oficio tradicional de esculpir.</p>
+
+          <h4>Características de la propuesta</h4>
+          <ul>
+            <li><strong>Eje temático y emotivo:</strong> Un homenaje a las raíces y al legado familiar que aporta al espectáculo un peso poético y una narrativa sólida.</li>
+            <li><strong>Impacto visual y simbólico:</strong> Integra elementos escénicos singulares, como utensilios de mampostería, para construir ilusiones de gran formato, tensión y ritmo.</li>
+            <li><strong>Variedad de efectos:</strong> Combina rutinas de gran impacto visual, demostraciones de precisión mental y momentos de cartomagia adaptada a la escena.</li>
+            <li><strong>Conexión con el espectador:</strong> Una puesta en escena cercana y participativa donde el público acompaña a la artista en la búsqueda del misterio oculto tras la materia.</li>
+          </ul>
+
+          <p>Una propuesta potente y elegante, especialmente diseñada para festivales, certámenes teatrales y redes de teatros que apuestan por la magia de autor con identidad propia.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- CONTACTO PICA -->
+    <section class="pica-contact" id="pica-contact">
+      <div class="section-label">03 / CONTACTO</div>
+      <h2>¿Preparamos <em>algo mágico?</em></h2>
+      <p>Para contrataciones, programación, información sobre los espectáculos o cualquier consulta:</p>
+      <a href="mailto:lamagapica@gmail.com" class="magic-contact">lamagapica@gmail.com ↗</a>
+      <a href="tel:+34628243657" class="magic-phone">628 243 657</a>
+    </section>
+
+    <!-- FOOTER PICA -->
+    <footer class="site-footer pica-footer">
+      <span>© La Maga Pica</span>
+      <button data-switch="patricia">Volver a Patricia Martín ↗</button>
+    </footer>
+
+  </div>
 
 
+  <!-- =========================================================
+       MODAL DE PROYECTOS 3D
+       ========================================================= -->
 
-<!-- JAVASCRIPT -->
+  <div class="project-modal" id="project-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-window">
+      <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-info">
+        <span id="modal-kicker"></span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+  </div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
+
 </html>
