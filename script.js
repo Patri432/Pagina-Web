@@ -3,59 +3,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const patriciaSite = document.getElementById("patricia-site");
   const picaSite = document.getElementById("pica-site");
 
-  // CAMBIO ENTRE PANTALLA DIVIDIDA Y LAS SITES
+  // MUESTRA UNA PÁGINA Y OCULTA LAS DEMÁS
   function openWorld(world) {
     if (world === "patricia") {
       worldSelector.style.display = "none";
-      patriciaSite.hidden = false;
-      picaSite.hidden = true;
+      picaSite.style.display = "none";
+      patriciaSite.style.display = "block";
     } else if (world === "pica") {
       worldSelector.style.display = "none";
-      picaSite.hidden = false;
-      patriciaSite.hidden = true;
+      patriciaSite.style.display = "none";
+      picaSite.style.display = "block";
     }
     window.scrollTo(0, 0);
   }
 
+  // VUELVE A LA PANTALLA PRINCIPAL
   function showSplitScreen() {
-    patriciaSite.hidden = true;
-    picaSite.hidden = true;
+    patriciaSite.style.display = "none";
+    picaSite.style.display = "none";
     worldSelector.style.display = "grid";
     window.scrollTo(0, 0);
   }
 
-  // BOTONES DE ENTRADA Y CAMBIO
+  // BOTONES ENTRAR (ENTRAR A PATRICIA / ENTRAR A LA MAGA PICA)
   document.querySelectorAll("[data-enter]").forEach(btn => {
-    btn.addEventListener("click", () => openWorld(btn.dataset.enter));
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWorld(btn.dataset.enter);
+    });
   });
 
-  document.querySelectorAll("[data-switch]").forEach(btn => {
-    btn.addEventListener("click", () => openWorld(btn.dataset.switch));
-  });
-
+  // BOTÓN "VOLVER AL INICIO" (CABECERA Y PIE DE PÁGINA)
   document.querySelectorAll("[data-home]").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       showSplitScreen();
-    });
-  });
-
-  // PESTAÑAS DENTRO DE LA MAGA PICA
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabContents = document.querySelectorAll(".pica-tab-content");
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const targetId = btn.dataset.tab;
-
-      tabButtons.forEach(b => b.classList.remove("active"));
-      tabContents.forEach(c => c.classList.remove("active"));
-
-      btn.classList.add("active");
-      const activeContent = document.getElementById(targetId);
-      if (activeContent) {
-        activeContent.classList.add("active");
-      }
     });
   });
 
