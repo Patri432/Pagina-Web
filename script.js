@@ -60,4 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // SUBPESTAÑAS DE SOBRE MÍ (LA MAGA PICA / ESCULTURA / FOTOGRAFÍA)
+  const subtabBtns = document.querySelectorAll(".subtab-btn");
+  const subtabContents = document.querySelectorAll(".subtab-content");
+
+  subtabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      subtabBtns.forEach(b => b.classList.remove("active"));
+      subtabContents.forEach(c => c.classList.remove("active"));
+
+      btn.classList.add("active");
+      const targetContent = document.getElementById(`subtab-${btn.dataset.subtab}`);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+    });
+  });
 });
