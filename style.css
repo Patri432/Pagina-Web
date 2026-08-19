@@ -162,7 +162,7 @@ a {
 }
 
 /* ==========================================================================
-   4. ESTRUCTURA BASE DE LAS WEBS (CABECERA, CUERPO Y PIE)
+   4. ESTRUCTURA BASE DE LAS WEBS
    ========================================================================== */
 .site {
   display: flex;
@@ -462,7 +462,51 @@ a {
   color: var(--pica-orange);
 }
 
-/* PORTADA Y GALERÍAS DE LA MAGA PICA */
+/* SUBPESTAÑAS DE SOBRE MÍ */
+.about-subtabs {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(252, 188, 102, 0.2);
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.subtab-btn {
+  background: transparent;
+  border: 1px solid var(--pica-teal);
+  color: var(--pica-text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.subtab-btn.active,
+.subtab-btn:hover {
+  background-color: var(--pica-orange);
+  border-color: var(--pica-orange);
+  color: #FFFFFF;
+}
+
+.subtab-content {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.subtab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* PORTADA Y BLOQUES DE HERO EN LA MAGA PICA */
 .pica-hero-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -480,6 +524,59 @@ a {
   border: 1px solid rgba(252, 188, 102, 0.2);
 }
 
+/* DESTACADO NARRATIVO ESCULTURA */
+.sculpture-narrative {
+  background: rgba(45, 29, 42, 0.6);
+  border-left: 4px solid var(--pica-warm);
+  padding: 1.5rem 2rem;
+  border-radius: 0 12px 12px 0;
+  margin-top: 2rem;
+}
+
+.sculpture-narrative strong {
+  color: var(--pica-warm);
+}
+
+/* GALERÍA DE FOTOGRAFÍA Y ESCULTURAS */
+.pica-photo-text {
+  margin-bottom: 2.5rem;
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.photo-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(141, 198, 191, 0.2);
+  background-color: #140d13;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Ajuste específico para que los detalles de las esculturas no se recorten drásticamente */
+.sculpture-gallery .photo-item img {
+  object-fit: contain;
+  background-color: #160e15;
+}
+
+.photo-item img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.08);
+}
+
+/* CARDS DE ESPECTÁCULOS */
 .show-card {
   background-color: var(--pica-card-bg);
   padding: 2.5rem;
@@ -584,17 +681,17 @@ a {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
-  
+
   .site-header, .site-footer {
     padding: 1.2rem 1.5rem;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .pica-hero-wrapper, .show-gallery {
+  .pica-hero-wrapper, .show-gallery, .photo-gallery-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero-patricia h1, .world-patricia h1, .world-pica h2 {
     font-size: 2.8rem;
   }
