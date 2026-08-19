@@ -1,23 +1,351 @@
-<!-- SUBPESTAÑA 3: FOTOGRAFÍA -->
-<div id="subtab-foto" class="subtab-content">
-  <div class="pica-photo-text">
-    <h2>Capturar la luz, <em>transformar la realidad.</em></h2>
-    <p>La fotografía y la magia comparten un mismo centro de gravedad: la manipulación de la luz, el tiempo y la atención para transformar la realidad.</p>
-    <p>La fotografía no es solo un lenguaje paralelo, sino una herramienta que nutre directamente su dimensión artística sobre el escenario. Su sensibilidad para la composición visual, la perspectiva y el contraste influye en la geometría de sus efectos y en la estética de sus montajes.</p>
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patricia Martín - Artista 3D & La Maga Pica.">
+  <title>Patricia Martín · La Maga Pica</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PANTALLA PRINCIPAL DIVIDIDA EN DOS (SPLIT SCREEN) -->
+  <main id="world-selector" class="world-selector">
+
+    <!-- LADO IZQUIERDO: PATRICIA MARTÍN -->
+    <section class="world world-patricia">
+      <div class="world-copy">
+        <p class="eyebrow">PORTFOLIO PROFESIONAL</p>
+        <h1>Patricia<br><em>Martín</em></h1>
+        <p class="world-description">Artista 3D · Animación · Modelado · Arte</p>
+        <button class="enter-button" data-enter="patricia">
+          Entrar a Patricia Martín ↗
+        </button>
+      </div>
+    </section>
+
+    <!-- LADO DERECHO: LA MAGA PICA -->
+    <section class="world world-pica">
+      <div class="world-copy">
+        <p class="eyebrow">EL OTRO LADO DEL TELÓN</p>
+        <img class="pica-logo-cover" src="assets/logo-pica.png" alt="La Maga Pica">
+        <h2>La Maga Pica</h2>
+        <p class="world-description">Magia · Ilusionismo · Espectáculo</p>
+        <button class="enter-button" data-enter="pica">
+          Entrar a La Maga Pica ↗
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- WEB DE PATRICIA MARTÍN (3D / PORTFOLIO) -->
+  <div id="patricia-site" class="site site-patricia" style="display: none;">
+
+    <header class="site-header">
+      <a href="#" class="brand" data-home="true">
+        <span class="brand-name">Patricia Martín</span>
+        <span class="brand-role">3D & 2D ARTIST</span>
+      </a>
+
+      <nav>
+        <a href="#about-patricia">Sobre mí</a>
+        <a href="#services">Servicios</a>
+        <a href="#work-3d">Portfolio 3D</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#contact-patricia">Contacto</a>
+        <button class="switch-world" data-home="true">← Volver al inicio</button>
+      </nav>
+    </header>
+
+    <div class="site-main">
+      <section class="hero-patricia" id="top">
+        <div class="hero-inner">
+          <p class="eyebrow">3D & 2D ARTIST</p>
+          <h1>Creo, modelo<br><em>y doy vida.</em></h1>
+          <p class="hero-text">Artista 3D especializada en modelado, texturizado, iluminación y animación.</p>
+        </div>
+      </section>
+
+      <section class="intro-section" id="about-patricia">
+        <div class="section-label">01 / SOBRE MÍ</div>
+        <div class="intro-content">
+          <h2>Diseño mundos,<br><em>objeto a objeto.</em></h2>
+          <p>Soy Patricia Martín, artista 3D con formación superior en Animación 3D y experiencia en modelado de productos, entornos y props.</p>
+        </div>
+      </section>
+
+      <section class="services-section" id="services">
+        <div class="section-label">02 / SERVICIOS</div>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Modelado 3D</h3>
+            <p>Productos y entornos con topología optimizada.</p>
+          </article>
+          <article class="service-card">
+            <h3>Texturizado e iluminación</h3>
+            <p>Texturizado PBR y renderizado fotorrealista.</p>
+          </article>
+          <article class="service-card">
+            <h3>Animación 3D</h3>
+            <p>Piezas audiovisuales y presentación.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-section" id="work-3d">
+        <div class="section-label">03 / PORTFOLIO 3D</div>
+        <h2>Trabajos de Diseño 3D</h2>
+
+        <div class="category-tabs" role="tablist">
+          <button class="category-tab active" data-filter="all">Todos</button>
+          <button class="category-tab" data-filter="environment">Environment</button>
+          <button class="category-tab" data-filter="props">Props</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-item" data-category="environment">
+            <button class="project-image-button">
+              <img src="assets/edificio.webp" alt="Edificio residencial">
+            </button>
+            <h3>Edificio residencial</h3>
+          </article>
+
+          <article class="project-card project-item" data-category="environment">
+            <button class="project-image-button">
+              <img src="assets/parque.png" alt="Parque urbano">
+            </button>
+            <h3>Parque urbano</h3>
+          </article>
+
+          <article class="project-card project-item" data-category="props">
+            <button class="project-image-button">
+              <img src="assets/cocina-01.png" alt="Cocina 3D">
+            </button>
+            <h3>Cocina</h3>
+          </article>
+
+          <article class="project-card project-item" data-category="props">
+            <button class="project-image-button">
+              <img src="assets/farola.png" alt="Farola urbana">
+            </button>
+            <h3>Farola urbana</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience-section" id="experience">
+        <div class="section-label">04 / EXPERIENCIA</div>
+        <p>Prácticas en Render Estudio 3D, RiojaSkills (1er Premio) y participación en SpainSkills.</p>
+      </section>
+
+      <section class="contact-section" id="contact-patricia">
+        <div class="section-label">05 / CONTACTO</div>
+        <h2>Contacto Profesional</h2>
+        <p>Email: <a href="mailto:patriciaanimacion3d@gmail.com">patriciaanimacion3d@gmail.com</a></p>
+        <p>Teléfono: <a href="tel:+34628243657">628 243 657</a></p>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <span>© Patricia Martín</span>
+      <button class="switch-world" data-home="true">← Volver al inicio</button>
+    </footer>
   </div>
 
-  <div class="photo-gallery-grid">
-    <figure class="photo-item">
-      <img src="assets/rayo.jpg" alt="Rayo cruzando el cielo">
-    </figure>
-    <figure class="photo-item">
-      <img src="assets/eclipse.jpg" alt="Secuencia de eclipse solar">
-    </figure>
-    <figure class="photo-item">
-      <img src="assets/cigueñas.jpg" alt="Cigüeñas en vuelo sobre campanario">
-    </figure>
-    <figure class="photo-item">
-      <img src="assets/reflejos.jpg" alt="Reflejo simétrico de puente nocturno">
-    </figure>
+
+  <!-- WEB DE LA MAGA PICA (MAGIA) -->
+  <div id="pica-site" class="site site-pica" style="display: none;">
+
+    <header class="site-header pica-header">
+      <a href="#" class="brand pica-brand" data-home="true">
+        <img src="assets/logo-pica.png" alt="La Maga Pica">
+        <span class="brand-name">La Maga Pica</span>
+      </a>
+
+      <nav>
+        <a href="#pica-about" class="tab-btn">Sobre mí</a>
+        <a href="#pica-shows" class="tab-btn">Espectáculos</a>
+        <a href="#pica-contact" class="tab-btn">Contacto</a>
+        <button class="switch-world" data-home="true">← Volver al inicio</button>
+      </nav>
+    </header>
+
+    <main class="pica-content">
+
+      <!-- SECCIÓN 1: SOBRE MÍ CON SUBPESTAÑAS -->
+      <section id="pica-about" class="pica-section">
+        <div class="section-label">01 / SOBRE MÍ</div>
+
+        <!-- Botones de subpestañas -->
+        <div class="about-subtabs">
+          <button class="subtab-btn active" data-subtab="magia">La Maga Pica</button>
+          <button class="subtab-btn" data-subtab="piedra">Escultura y Piedra</button>
+          <button class="subtab-btn" data-subtab="foto">Fotografía</button>
+        </div>
+
+        <!-- SUBPESTAÑA 1: MAGIA -->
+        <div id="subtab-magia" class="subtab-content active">
+          <div class="pica-hero-wrapper">
+            <div class="pica-hero-image">
+              <img src="assets/xperience.jpg" alt="La Maga Pica en directo">
+            </div>
+            <div class="pica-hero-text">
+              <h2>Soy Patricia Martín, <br><em>La Maga Pica.</em></h2>
+              <p>Mi identidad artística nace como un homenaje al legado de mi abuelo, quien esculpía la piedra y era conocido como "El Pica". De su oficio heredo la premisa que guía mi trabajo sobre el escenario: esculpir la ilusión con paciencia, técnica y precisión hasta transformar la materia cotidiana en una experiencia extraordinaria.</p>
+            </div>
+          </div>
+          <p>Mi repertorio abarca desde espectáculos de escenario y galas teatrales hasta formatos de magia de cerca (Close-up) para eventos corporativos y culturales.</p>
+          <p>Mi objetivo se centra en dignificar el arte de la magia como una disciplina escénica contemporánea, capaz de sorprender a públicos exigentes y generar momentos memorables.</p>
+          <p>Abierta a programación en teatros, festivales, eventos corporativos y proyectos de creación cultural.</p>
+        </div>
+
+        <!-- SUBPESTAÑA 2: ESCULTURA Y PIEDRA -->
+        <div id="subtab-piedra" class="subtab-content">
+          <div class="pica-hero-wrapper">
+            <div class="pica-hero-image">
+              <img src="assets/fuente-piedra.jpg" alt="Fuente de piedra - La magia de Patricia">
+            </div>
+            <div class="pica-hero-text">
+              <h2>El arte de tallar <br><em>la piedra.</em></h2>
+              <p>Con 15 años y viendo las esculturas de mi abuelo, cogí una de sus mazas y uno de sus cinceles y empecé a esculpir. Sentía como si las manos de mi abuelo guiasen las mías. Mágicamente donde había una piedra sin forma, aparecía una figura.</p>
+            </div>
+          </div>
+          
+          <div class="sculpture-narrative">
+            <p>Esculpir la piedra y hacer magia son, en esencia, dos formas distintas de realizar el mismo acto: <strong>revelar lo invisible y transformar la materia.</strong></p>
+            <p>El escultor no "crea" la forma desde la nada; la libera. Sabe que la figura ya habita dentro del bloque de piedra y que su trabajo consiste en retirar lo sobrante para sacarla a la luz.</p>
+          </div>
+
+          <div class="photo-gallery-grid sculpture-gallery" style="margin-top: 3rem;">
+            <figure class="photo-item">
+              <img src="assets/guernica.jpg" alt="Relieve tallado en piedra">
+            </figure>
+            <figure class="photo-item">
+              <img src="assets/el-molino.jpg" alt="El molino de la abuela esculpido en piedra">
+            </figure>
+            <figure class="photo-item">
+              <img src="assets/fuente-piedra.jpg" alt="Fuente esculpida en piedra - La Magia de Patricia">
+            </figure>
+            <figure class="photo-item">
+              <img src="assets/escudo.jpg" alt="Escudo heráldico en piedra - Martín Aguado">
+            </figure>
+          </div>
+        </div>
+
+        <!-- SUBPESTAÑA 3: FOTOGRAFÍA -->
+        <div id="subtab-foto" class="subtab-content">
+          <div class="pica-photo-text">
+            <h2>Capturar la luz, <em>transformar la realidad.</em></h2>
+            <p>La fotografía y la magia comparten un mismo centro de gravedad: la manipulación de la luz, el tiempo y la atención para transformar la realidad.</p>
+            <p>La fotografía no es solo un lenguaje paralelo, sino una herramienta que nutre directamente su dimensión artística sobre el escenario. Su sensibilidad para la composición visual, la perspectiva y el contraste influye en la geometría de sus efectos y en la estética de sus montajes.</p>
+          </div>
+
+          <div class="photo-gallery-grid">
+            <figure class="photo-item">
+              <img src="assets/rayo.jpg" alt="Rayo cruzando el cielo">
+            </figure>
+            <figure class="photo-item">
+              <img src="assets/eclipse.jpg" alt="Secuencia de eclipse solar">
+            </figure>
+            <figure class="photo-item">
+              <img src="assets/cigueñas.jpg" alt="Cigüeñas en vuelo sobre campanario">
+            </figure>
+            <figure class="photo-item">
+              <img src="assets/reflejos.jpg" alt="Reflejo simétrico de puente nocturno">
+            </figure>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SECCIÓN 2: ESPECTÁCULOS -->
+      <section id="pica-shows" class="pica-section">
+        <div class="section-label">02 / ESPECTÁCULOS</div>
+        <h2>Magia con historia, <em>magia con identidad.</em></h2>
+
+        <!-- ESPECTÁCULO 1: LA HERMANA DEL MEDIO -->
+        <article class="show-card">
+          <div class="show-header-info">
+            <h3>La hermana del medio</h3>
+            <p class="show-subtitle">Espectáculo de magia y narrativa escénica</p>
+          </div>
+
+          <div class="show-gallery">
+            <img src="assets/alfaro.jpg" alt="La hermana del medio - Alfaro">
+            <img src="assets/pompones.jpg" alt="La hermana del medio - Pompones">
+          </div>
+
+          <ul class="show-meta">
+            <li><strong>Dramaturgia e interpretación:</strong> Patricia Martín (La Maga Pica)</li>
+            <li><strong>Formato:</strong> Magia de escenario / Teatro unipersonal</li>
+            <li><strong>Público objetivo:</strong> Espectáculo familiar</li>
+          </ul>
+
+          <h4>Sinopsis</h4>
+          <p>La hermana del medio es una propuesta de ilusionismo contemporáneo que explora el lugar que ocupamos en la familia, las memorias compartidas y las dinámicas invisibles que definen quiénes somos.</p>
+
+          <h4>Características de la propuesta</h4>
+          <ul>
+            <li><strong>Ilusionismo con relato:</strong> La técnica como lenguaje para contar una historia universal.</li>
+            <li><strong>Diversidad de disciplinas:</strong> Cartomagia, mentalismo e ilusionismo de escenario.</li>
+            <li><strong>Participación activa:</strong> El público forma parte directa de la magia.</li>
+          </ul>
+        </article>
+
+        <!-- ESPECTÁCULO 2: PICA -->
+        <article class="show-card">
+          <div class="show-header-info">
+            <h3>PICA</h3>
+            <p class="show-subtitle">Magia, memoria y el arte de esculpir la ilusión</p>
+          </div>
+
+          <div class="show-gallery">
+            <img src="assets/rasillo.jpg" alt="Espectáculo PICA - Rasillo">
+            <img src="assets/guitarra.jpg" alt="Espectáculo PICA - Guitarra">
+          </div>
+
+          <ul class="show-meta">
+            <li><strong>Dramaturgia e interpretación:</strong> Patricia Martín (La Maga Pica)</li>
+            <li><strong>Formato:</strong> Magia de escenario / Teatro de pequeño y mediano formato</li>
+            <li><strong>Público objetivo:</strong> Espectáculo familiar</li>
+          </ul>
+
+          <h4>Sinopsis</h4>
+          <p>PICA es el espectáculo más personal de Patricia Martín, un viaje escénico donde la magia se entrelaza con el homenaje familiar, la memoria y la artesanía.</p>
+        </article>
+      </section>
+
+      <!-- SECCIÓN 3: CONTACTO -->
+      <section id="pica-contact" class="pica-section">
+        <div class="section-label">03 / CONTACTO</div>
+        <h2>Contacto & Contratación</h2>
+        <p>Para contrataciones, programación de espectáculos o información:</p>
+
+        <ul class="contact-details">
+          <li><strong>Email:</strong> <a href="mailto:lamagapica@gmail.com">lamagapica@gmail.com</a></li>
+          <li><strong>Teléfono:</strong> <a href="tel:+34628243657">628 243 657</a></li>
+          <li><strong>Instagram:</strong> <a href="https://instagram.com/lamagapica" target="_blank">@lamagapica</a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="site-footer pica-footer">
+      <span>© La Maga Pica</span>
+      <button class="switch-world" data-home="true">← Volver al inicio</button>
+    </footer>
+
   </div>
-</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
