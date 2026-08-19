@@ -1,154 +1,323 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // ELEMENTOS
-  const worldSelector = document.getElementById("world-selector");
-  const patriciaSite = document.getElementById("patricia-site");
-  const picaSite = document.getElementById("pica-site");
+/* ==========================================================================
+   VARIABLES DE COLOR
+   ========================================================================== */
+:root {
+  /* PALETA PATRICIA MARTÍN (Lagoon) */
+  --patricia-dark: #26798E;
+  --patricia-teal: #63CAA7;
+  --patricia-accent: #FFC172;
+  --patricia-light: #FFE3B3;
+  --patricia-bg: #f7faf9;
+  --patricia-text: #1a333a;
 
-  // NAVEGACIÓN ENTRE MUNDOS
-  const enterButtons = document.querySelectorAll("[data-enter]");
-  const switchButtons = document.querySelectorAll("[data-switch]");
-  const homeButtons = document.querySelectorAll("[data-home]");
+  /* PALETA LA MAGA PICA (Colors #225) */
+  --pica-dark: #584053;
+  --pica-teal: #8DC6BF;
+  --pica-warm: #FCBC66;
+  --pica-orange: #F97B4F;
+  --pica-bg: #2a1c28;
+  --pica-text: #fbeee6;
+}
 
-  function openWorld(world) {
-    if (world === "patricia") {
-      worldSelector.style.display = "none";
-      patriciaSite.hidden = false;
-      picaSite.hidden = true;
-      window.scrollTo(0, 0);
-    } else if (world === "pica") {
-      worldSelector.style.display = "none";
-      picaSite.hidden = false;
-      patriciaSite.hidden = true;
-      window.scrollTo(0, 0);
-    }
+/* ==========================================================================
+   ESTILOS GENERALES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #111;
+  color: #333;
+}
+
+/* ==========================================================================
+   PANTALLA PRINCIPAL DIVIDIDA (SPLIT SCREEN 50% / 50%)
+   ========================================================================== */
+.world-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.world {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Lado Patricia */
+.world-patricia {
+  background-color: var(--patricia-dark);
+  color: var(--patricia-light);
+}
+
+.world-patricia h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+}
+
+.world-patricia .enter-button {
+  background-color: var(--patricia-accent);
+  color: var(--patricia-text);
+}
+
+.world-patricia .enter-button:hover {
+  background-color: var(--patricia-teal);
+}
+
+/* Lado La Maga Pica */
+.world-pica {
+  background-color: var(--pica-dark);
+  color: var(--pica-text);
+}
+
+.world-pica h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  color: var(--pica-warm);
+}
+
+.world-pica .enter-button {
+  background-color: var(--pica-orange);
+  color: #ffffff;
+}
+
+.world-pica .enter-button:hover {
+  background-color: var(--pica-warm);
+  color: var(--pica-dark);
+}
+
+.enter-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pica-logo-cover {
+  max-width: 120px;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   WEB DE PATRICIA MARTÍN
+   ========================================================================== */
+.site-patricia {
+  background-color: var(--patricia-bg);
+  color: var(--patricia-text);
+  min-height: 100vh;
+}
+
+.site-patricia .site-header {
+  background-color: var(--patricia-dark);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+}
+
+.site-patricia nav a, 
+.site-patricia .brand {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1.5rem;
+}
+
+.hero-patricia {
+  background: linear-gradient(135deg, var(--patricia-dark), var(--patricia-teal));
+  color: #fff;
+  padding: 6rem 3rem;
+  text-align: center;
+}
+
+.hero-patricia h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+}
+
+.category-tab {
+  background-color: var(--patricia-light);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-right: 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category-tab.active {
+  background-color: var(--patricia-dark);
+  color: #fff;
+}
+
+/* ==========================================================================
+   WEB DE LA MAGA PICA
+   ========================================================================== */
+.site-pica {
+  background-color: var(--pica-bg);
+  color: var(--pica-text);
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.pica-header {
+  background-color: var(--pica-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid var(--pica-orange);
+}
+
+.pica-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--pica-warm);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pica-brand img {
+  height: 40px;
+}
+
+/* Pestañas de navegación */
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--pica-teal);
+  color: var(--pica-text);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background-color: var(--pica-orange);
+  color: #fff;
+  border-color: var(--pica-orange);
+}
+
+.switch-world {
+  background-color: var(--pica-warm);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Contenido por Pestañas */
+.pica-content {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.pica-tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.pica-tab-content.active {
+  display: block;
+}
+
+.pica-tab-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--pica-warm);
+  margin-bottom: 1.5rem;
+}
+
+.pica-tab-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.show-card {
+  background-color: rgba(88, 64, 83, 0.4);
+  padding: 2rem;
+  border-left: 4px solid var(--pica-teal);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.show-card h3 {
+  font-size: 2.2rem;
+  color: var(--pica-warm);
+}
+
+.show-subtitle {
+  color: var(--pica-teal);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.show-meta {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.show-meta li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-details {
+  list-style: none;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.contact-details li {
+  margin-bottom: 1rem;
+}
+
+.contact-details a {
+  color: var(--pica-warm);
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  color: var(--pica-orange);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Adaptación Módil */
+@media (max-width: 768px) {
+  .world-selector {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
-
-  function showWorldSelector() {
-    patriciaSite.hidden = true;
-    picaSite.hidden = true;
-    worldSelector.style.display = "flex";
-    window.scrollTo(0, 0);
-  }
-
-  enterButtons.forEach(btn => {
-    btn.addEventListener("click", () => openWorld(btn.dataset.enter));
-  });
-
-  switchButtons.forEach(btn => {
-    btn.addEventListener("click", () => openWorld(btn.dataset.switch));
-  });
-
-  homeButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      showWorldSelector();
-    });
-  });
-
-  // PESTAÑAS Y FILTROS DE PROYECTOS (PATRICIA)
-  const categoryTabs = document.querySelectorAll(".category-tab");
-  const projectItems = document.querySelectorAll(".project-item");
-
-  categoryTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      categoryTabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      const filter = tab.dataset.filter;
-
-      projectItems.forEach(item => {
-        if (filter === "all" || item.dataset.category === filter) {
-          item.hidden = false;
-        } else {
-          item.hidden = true;
-        }
-      });
-    });
-  });
-
-  // MODAL DE PROYECTOS
-  const modal = document.getElementById("project-modal");
-  const modalMedia = document.getElementById("modal-media");
-  const modalKicker = document.getElementById("modal-kicker");
-  const modalTitle = document.getElementById("modal-title");
-  const modalDesc = document.getElementById("modal-description");
-  const closeButtons = document.querySelectorAll("[data-close-modal]");
-
-  const projectData = {
-    edificio: {
-      kicker: "ENVIRONMENT / 01",
-      title: "Edificio residencial",
-      desc: "Modelado y visualización arquitectónica detallada.",
-      img: "assets/edificio-residencial.webp"
-    },
-    parque: {
-      kicker: "ENVIRONMENT / 02",
-      title: "Parque urbano",
-      desc: "Creación de entorno y elementos de espacio público.",
-      img: "assets/parque.webp"
-    },
-    "zona-juegos": {
-      kicker: "ENVIRONMENT / 03",
-      title: "Zona de juegos",
-      desc: "Modelado de elementos de espacio exterior e infraestructuras infantiles.",
-      img: "assets/zona-juegos.webp"
-    },
-    cocina: {
-      kicker: "PROPS / 01",
-      title: "Cocina",
-      desc: "Modelado de mobiliario e interiorismo.",
-      img: "assets/cocina-01.png"
-    },
-    cajon: {
-      kicker: "PROPS / 02",
-      title: "Cajón y cubertería",
-      desc: "Modelado de objetos y detalle fino de producto.",
-      img: "assets/cocina-02.png"
-    },
-    farola: {
-      kicker: "PROPS / 03",
-      title: "Farola urbana",
-      desc: "Modelado de elemento de mobiliario urbano.",
-      img: "assets/farola.png"
-    },
-    fuente: {
-      kicker: "PROPS / 04",
-      title: "Fuente urbana",
-      desc: "Modelado de elemento para entorno exterior.",
-      img: "assets/fuente.png"
-    }
-  };
-
-  document.querySelectorAll(".project-image-button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const key = btn.dataset.project;
-      const data = projectData[key];
-
-      if (data) {
-        modalMedia.innerHTML = `<img src="${data.img}" alt="${data.title}">`;
-        modalKicker.textContent = data.kicker;
-        modalTitle.textContent = data.title;
-        modalDesc.textContent = data.desc;
-        modal.setAttribute("aria-hidden", "false");
-      }
-    });
-  });
-
-  closeButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      modal.setAttribute("aria-hidden", "true");
-    });
-  });
-
-  // MENÚ MÓVIL
-  document.querySelectorAll(".mobile-menu").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const nav = btn.parentElement.querySelector("nav");
-      if (nav) {
-        const isExpanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", !isExpanded);
-        nav.classList.toggle("mobile-open");
-      }
-    });
-  });
-});
+}
