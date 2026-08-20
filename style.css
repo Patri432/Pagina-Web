@@ -89,7 +89,6 @@ a {
   opacity: 0.9;
 }
 
-/* Lado Patricia */
 .world-patricia {
   background: linear-gradient(135deg, var(--pat-dark) 0%, #1a5767 100%);
   color: var(--pat-light);
@@ -119,7 +118,6 @@ a {
   transform: translateY(-3px);
 }
 
-/* Lado La Maga Pica */
 .world-pica {
   background: linear-gradient(135deg, var(--pica-dark) 0%, var(--pica-bg) 100%);
   color: var(--pica-text);
@@ -255,6 +253,47 @@ a {
   color: var(--pat-accent);
 }
 
+/* DROPDOWN MENU PARA PORTFOLIO 3D */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--pat-dark);
+  min-width: 170px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  padding: 0.6rem 0;
+  z-index: 200;
+  border: 1px solid rgba(99, 202, 167, 0.3);
+}
+
+.dropdown-menu a {
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem;
+  display: block;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--pat-accent);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .site-patricia .switch-world {
   background-color: var(--pat-accent);
   color: var(--pat-text);
@@ -321,37 +360,27 @@ a {
   border: 1px solid rgba(99, 202, 167, 0.2);
 }
 
-.service-card h3 {
-  color: var(--pat-dark);
-  margin-bottom: 0.8rem;
-}
-
-.category-tabs {
-  display: flex;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-}
-
-.category-tab {
-  background: #EAEFEF;
-  border: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 30px;
-  color: var(--pat-muted);
-  font-weight: 500;
+/* PORTFOLIO TARJETAS INTERACTIVAS */
+.project-card.project-open-btn {
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.category-tab.active {
-  background-color: var(--pat-dark);
-  color: #FFFFFF;
+.project-card.project-open-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(38, 121, 142, 0.18);
+}
+
+.project-mini-desc {
+  font-size: 0.88rem;
+  color: var(--pat-muted);
+  margin-top: 0.5rem;
 }
 
 .project-image-button {
   width: 100%;
   border: none;
   background: none;
-  cursor: pointer;
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 1rem;
@@ -362,10 +391,60 @@ a {
   height: 220px;
   object-fit: cover;
   transition: transform 0.4s ease;
+  display: block;
 }
 
-.project-image-button:hover img {
+.project-card.project-open-btn:hover .project-image-button img {
   transform: scale(1.05);
+}
+
+/* VISTA DE DETALLE DE PROYECTOS (GALERÍAS OCULTAS) */
+.back-to-grid-btn {
+  background-color: var(--pat-dark);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+
+}
+
+.back-to-grid-btn:hover {
+  background-color: var(--pat-accent);
+  color: var(--pat-text);
+}
+
+.detail-header {
+  margin-bottom: 2rem;
+}
+
+.detail-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.detail-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.detail-media-grid img,
+.detail-media-grid video {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
+  background: #000;
 }
 
 /* SOFTWARE & HERRAMIENTAS */
@@ -641,7 +720,6 @@ a {
   color: var(--pica-orange);
 }
 
-/* SUBPESTAÑAS DE SOBRE MÍ */
 .about-subtabs {
   display: flex;
   gap: 0.8rem;
@@ -685,7 +763,6 @@ a {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* PORTADA Y BLOQUES DE HERO EN LA MAGA PICA */
 .pica-hero-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -703,7 +780,6 @@ a {
   border: 1px solid rgba(252, 188, 102, 0.2);
 }
 
-/* DESTACADO NARRATIVO ESCULTURA */
 .sculpture-narrative {
   background: rgba(45, 29, 42, 0.6);
   border-left: 4px solid var(--pica-warm);
@@ -716,7 +792,6 @@ a {
   color: var(--pica-warm);
 }
 
-/* GALERÍA DE FOTOGRAFÍA Y ESCULTURAS */
 .pica-photo-text {
   margin-bottom: 2.5rem;
 }
@@ -744,7 +819,6 @@ a {
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Ajuste para las esculturas */
 .sculpture-gallery .photo-item img {
   object-fit: contain;
   background-color: #160e15;
@@ -755,7 +829,6 @@ a {
   filter: brightness(1.08);
 }
 
-/* CARDS DE ESPECTÁCULOS */
 .show-card {
   background-color: var(--pica-card-bg);
   padding: 2.5rem;
