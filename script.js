@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   }
 
-  // BOTONES ENTRAR (ENTRAR A PATRICIA / ENTRAR A LA MAGA PICA)
+  // BOTONES ENTRAR
   document.querySelectorAll("[data-enter]").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // BOTÓN "VOLVER AL INICIO" (CABECERA Y PIE DE PÁGINA)
+  // BOTÓN "VOLVER AL INICIO"
   document.querySelectorAll("[data-home]").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -41,27 +41,65 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // FILTROS DE PORTFOLIO 3D (PATRICIA)
-  const categoryTabs = document.querySelectorAll(".category-tab");
-  const projectItems = document.querySelectorAll(".project-item");
+  /* ==========================================================================
+     LÓGICA DEL PORTFOLIO 3D (GALERÍAS INDIVIDUALES & DROPDOWN)
+     ========================================================================== */
+  const gridView = document.getElementById("projects-grid-view");
+  const detailView = document.getElementById("project-detail-view");
+  const backBtn = document.querySelector(".back-to-grid-btn");
+  const detailContents = document.querySelectorAll(".project-detail-content");
 
-  categoryTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      categoryTabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
+  // FUNCIÓN PARA ABRIR UN PROYECTO
+  function openProjectDetail(projectId) {
+    gridView.style.display = "none";
+    detailView.style.display = "block";
 
-      const filter = tab.dataset.filter;
-      projectItems.forEach(item => {
-        if (filter === "all" || item.dataset.category === filter) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
-      });
+    detailContents.forEach(content => {
+      content.style.display = "none";
+    });
+
+    const targetDetail = document.getElementById(`detail-${projectId}`);
+    if (targetDetail) {
+      targetDetail.style.display = "block";
+      const sectionHeader = document.getElementById("work-3d");
+      sectionHeader.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  // FUNCIÓN PARA VOLVER A LA VISTA GENERAL
+  function closeProjectDetail() {
+    detailView.style.display = "none";
+    gridView.style.display = "grid";
+    detailContents.forEach(content => {
+      content.style.display = "none";
+    });
+  }
+
+  // EVENTOS PARA LAS TARJETAS DE LA REJILLA
+  document.querySelectorAll(".project-open-btn").forEach(card => {
+    card.addEventListener("click", () => {
+      const projectId = card.dataset.project;
+      openProjectDetail(projectId);
     });
   });
 
-  // SUBPESTAÑAS DE SOBRE MÍ (LA MAGA PICA / ESCULTURA / FOTOGRAFÍA)
+  // EVENTOS PARA EL DROPDOWN DEL MENÚ SUPERIOR
+  document.querySelectorAll(".project-direct-link").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const projectId = link.dataset.project;
+      openProjectDetail(projectId);
+    });
+  });
+
+  // BOTÓN VOLVER
+  if (backBtn) {
+    backBtn.addEventListener("click", closeProjectDetail);
+  }
+
+  /* ==========================================================================
+     SUBPESTAÑAS SOBRE MÍ (LA MAGA PICA)
+     ========================================================================== */
   const subtabBtns = document.querySelectorAll(".subtab-btn");
   const subtabContents = document.querySelectorAll(".subtab-content");
 
