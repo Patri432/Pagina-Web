@@ -368,6 +368,185 @@ a {
   transform: scale(1.05);
 }
 
+/* SOFTWARE & HERRAMIENTAS */
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.software-card {
+  background: var(--pat-card-bg);
+  border: 1px solid rgba(99, 202, 167, 0.25);
+  border-radius: 14px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 15px rgba(38, 121, 142, 0.05);
+  transition: all 0.3s ease;
+}
+
+.software-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--pat-dark);
+  box-shadow: 0 8px 25px rgba(38, 121, 142, 0.15);
+}
+
+.software-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pat-dark);
+}
+
+.software-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.adobe-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background: var(--pat-dark);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.software-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pat-text);
+  text-align: center;
+}
+
+/* TIMELINE (LÍNEA DE TIEMPO) */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding-left: 2rem;
+  border-left: 3px solid var(--pat-teal);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.timeline-badge.work {
+  background-color: var(--pat-dark);
+  color: #fff;
+}
+
+.timeline-badge.edu {
+  background-color: var(--pat-accent);
+  color: var(--pat-text);
+}
+
+.timeline-content {
+  background: var(--pat-card-bg);
+  padding: 1.8rem;
+  border-radius: 14px;
+  border: 1px solid rgba(99, 202, 167, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  margin-left: 1rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pat-dark);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  color: var(--pat-text);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-place {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pat-muted);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* PREMIOS & RECONOCIMIENTOS */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.award-card {
+  background: var(--pat-card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(99, 202, 167, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  display: flex;
+  gap: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-4px);
+}
+
+.award-card.highlight {
+  border: 2px solid var(--pat-accent);
+  background: linear-gradient(145deg, #ffffff, #fffbf3);
+}
+
+.award-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.award-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--pat-dark);
+}
+
+.award-info h3 {
+  font-size: 1.15rem;
+  color: var(--pat-text);
+  margin: 0.2rem 0;
+}
+
+.award-org {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pat-muted);
+  margin-bottom: 0.6rem;
+}
+
 .site-patricia .site-footer {
   background-color: var(--pat-dark);
   color: var(--pat-light);
@@ -565,7 +744,7 @@ a {
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Ajuste específico para que los detalles de las esculturas no se recorten drásticamente */
+/* Ajuste para las esculturas */
 .sculpture-gallery .photo-item img {
   object-fit: contain;
   background-color: #160e15;
@@ -690,6 +869,10 @@ a {
 
   .pica-hero-wrapper, .show-gallery, .photo-gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 1rem;
   }
 
   .hero-patricia h1, .world-patricia h1, .world-pica h2 {
