@@ -1,118 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const worldSelector = document.getElementById("world-selector");
-  const patriciaSite = document.getElementById("patricia-site");
-  const picaSite = document.getElementById("pica-site");
+document.addEventListener('DOMContentLoaded', () => {
+  const gridView = document.getElementById('projects-grid-view');
+  const detailView = document.getElementById('project-detail-view');
+  const openButtons = document.querySelectorAll('.project-open-btn');
+  const backButton = document.querySelector('.back-to-grid-btn');
+  const detailContents = document.querySelectorAll('.project-detail-content');
 
-  // MUESTRA UNA PÁGINA Y OCULTA LAS DEMÁS
-  function openWorld(world) {
-    if (world === "patricia") {
-      worldSelector.style.display = "none";
-      picaSite.style.display = "none";
-      patriciaSite.style.display = "block";
-    } else if (world === "pica") {
-      worldSelector.style.display = "none";
-      patriciaSite.style.display = "none";
-      picaSite.style.display = "block";
-    }
-    window.scrollTo(0, 0);
-  }
+  // Abrir vista detallada
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const projectKey = button.getAttribute('data-project');
+      const targetDetail = document.getElementById(`detail-${projectKey}`);
 
-  // VUELVE A LA PANTALLA PRINCIPAL
-  function showSplitScreen() {
-    patriciaSite.style.display = "none";
-    picaSite.style.display = "none";
-    worldSelector.style.display = "grid";
-    window.scrollTo(0, 0);
-  }
+      if (targetDetail) {
+        // Ocultar la rejilla principal
+        gridView.style.display = 'none';
 
-  // BOTONES ENTRAR
-  document.querySelectorAll("[data-enter]").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      openWorld(btn.dataset.enter);
-    });
-  });
+        // Ocultar todos los detalles por seguridad
+        detailContents.forEach(content => {
+          content.style.display = 'none';
+        });
 
-  // BOTÓN "VOLVER AL INICIO"
-  document.querySelectorAll("[data-home]").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      showSplitScreen();
-    });
-  });
+        // Mostrar el contenedor global de detalles y el específico
+        detailView.style.display = 'block';
+        targetDetail.style.display = 'block';
 
-  /* ==========================================================================
-     LÓGICA DEL PORTFOLIO 3D (GALERÍAS INDIVIDUALES & DROPDOWN)
-     ========================================================================== */
-  const gridView = document.getElementById("projects-grid-view");
-  const detailView = document.getElementById("project-detail-view");
-  const backBtn = document.querySelector(".back-to-grid-btn");
-  const detailContents = document.querySelectorAll(".project-detail-content");
-
-  // FUNCIÓN PARA ABRIR UN PROYECTO
-  function openProjectDetail(projectId) {
-    gridView.style.display = "none";
-    detailView.style.display = "block";
-
-    detailContents.forEach(content => {
-      content.style.display = "none";
-    });
-
-    const targetDetail = document.getElementById(`detail-${projectId}`);
-    if (targetDetail) {
-      targetDetail.style.display = "block";
-      const sectionHeader = document.getElementById("work-3d");
-      sectionHeader.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
-  // FUNCIÓN PARA VOLVER A LA VISTA GENERAL
-  function closeProjectDetail() {
-    detailView.style.display = "none";
-    gridView.style.display = "grid";
-    detailContents.forEach(content => {
-      content.style.display = "none";
-    });
-  }
-
-  // EVENTOS PARA LAS TARJETAS DE LA REJILLA
-  document.querySelectorAll(".project-open-btn").forEach(card => {
-    card.addEventListener("click", () => {
-      const projectId = card.dataset.project;
-      openProjectDetail(projectId);
-    });
-  });
-
-  // EVENTOS PARA EL DROPDOWN DEL MENÚ SUPERIOR
-  document.querySelectorAll(".project-direct-link").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const projectId = link.dataset.project;
-      openProjectDetail(projectId);
-    });
-  });
-
-  // BOTÓN VOLVER
-  if (backBtn) {
-    backBtn.addEventListener("click", closeProjectDetail);
-  }
-
-  /* ==========================================================================
-     SUBPESTAÑAS SOBRE MÍ (LA MAGA PICA)
-     ========================================================================== */
-  const subtabBtns = document.querySelectorAll(".subtab-btn");
-  const subtabContents = document.querySelectorAll(".subtab-content");
-
-  subtabBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      subtabBtns.forEach(b => b.classList.remove("active"));
-      subtabContents.forEach(c => c.classList.remove("active"));
-
-      btn.classList.add("active");
-      const targetContent = document.getElementById(`subtab-${btn.dataset.subtab}`);
-      if (targetContent) {
-        targetContent.classList.add("active");
+        // Desplazar al inicio de la sección
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
   });
+
+  // Volver a la rejilla principal
+  if (backButton) {
+    backButton.addEventListener('click', () => {
+      // Detener vídeos que estén en reproducción al salir
+      const videos = detailView.querySelectorAll('video');
+      videos.forEach(video => video.pause());
+
+      // Ocultar vista de detalles y mostrar la rejilla
+      detailView.style.display = 'none';
+      detailContents.forEach(content => {
+        content.style.display = 'none';
+      });
+
+      gridView.style.display = 'grid';
+    });
+  }
 });
