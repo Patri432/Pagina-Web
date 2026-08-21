@@ -41,16 +41,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ==========================================================================
-     LÓGICA DEL PORTFOLIO 3D (GALERÍAS INDIVIDUALES & DROPDOWN)
+ /* ==========================================================================
+     LÓGICA DEL PORTFOLIO 3D (GALERÍAS INDIVIDUALES & OCULTACIÓN DE CUERPO)
      ========================================================================== */
   const gridView = document.getElementById("projects-grid-view");
   const detailView = document.getElementById("project-detail-view");
-  const backBtn = document.querySelector(".back-to-grid-btn");
+  const backBtns = document.querySelectorAll(".back-to-grid-btn");
   const detailContents = document.querySelectorAll(".project-detail-content");
+
+  // Elementos del cuerpo a ocultar cuando se abre un proyecto
+  const mainSectionsToToggle = document.querySelectorAll(
+    ".hero-patricia, .intro-section, .services-section, .skills-section, .experience-section, .awards-section, .contact-section, .portfolio-section > h2, .portfolio-section > .section-label"
+  );
 
   // FUNCIÓN PARA ABRIR UN PROYECTO
   function openProjectDetail(projectId) {
+    // Oculta las secciones generales de la web
+    mainSectionsToToggle.forEach(sec => sec.style.display = "none");
+    
     gridView.style.display = "none";
     detailView.style.display = "block";
 
@@ -61,8 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const targetDetail = document.getElementById(`detail-${projectId}`);
     if (targetDetail) {
       targetDetail.style.display = "block";
-      const sectionHeader = document.getElementById("work-3d");
-      sectionHeader.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
 
@@ -70,9 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeProjectDetail() {
     detailView.style.display = "none";
     gridView.style.display = "grid";
+    
+    // Muestra de nuevo todas las secciones del cuerpo
+    mainSectionsToToggle.forEach(sec => sec.style.display = "");
+
     detailContents.forEach(content => {
       content.style.display = "none";
     });
+
+    const workSection = document.getElementById("work-3d");
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   // EVENTOS PARA LAS TARJETAS DE LA REJILLA
@@ -92,11 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // BOTÓN VOLVER
-  if (backBtn) {
-    backBtn.addEventListener("click", closeProjectDetail);
-  }
-
+  // BOTONES VOLVER
+  backBtns.forEach(btn => {
+    btn.addEventListener("click", closeProjectDetail);
+  });
+  
   /* ==========================================================================
      SUBPESTAÑAS SOBRE MÍ (LA MAGA PICA)
      ========================================================================== */
