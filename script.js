@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailContents = document.querySelectorAll(".project-detail-content");
   const subdetailContents = document.querySelectorAll(".subdetail-content");
 
-  // Elementos del cuerpo a ocultar cuando se abre un proyecto
+  // Elementos del cuerpo a ocultar cuando se abre un proyecto o subproyecto
   const mainSectionsToToggle = document.querySelectorAll(
     ".hero-patricia, .intro-section, .services-section, .skills-section, .experience-section, .awards-section, .contact-section, .portfolio-section > h2, .portfolio-section > .section-label"
   );
@@ -67,19 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
       content.style.display = "none";
     });
 
-    // Resetear subdetalles
+    // Ocultar todos los subdetalles y restablecer la vista de categorías
     subdetailContents.forEach(sub => sub.style.display = "none");
+    document.querySelectorAll(".category-main-view").forEach(cat => cat.style.display = "block");
 
     const targetDetail = document.getElementById(`detail-${projectId}`);
     if (targetDetail) {
       targetDetail.style.display = "block";
-
-      // Si es una categoría con subproyectos, muestra su rejilla interna
-      const subGrid = targetDetail.querySelector(".subprojects-grid");
-      if (subGrid) {
-        subGrid.style.display = "grid";
-      }
-
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
@@ -88,16 +82,30 @@ document.addEventListener("DOMContentLoaded", () => {
   function openSubprojectDetail(subprojectId, categoryId) {
     const parentDetail = document.getElementById(`detail-${categoryId}`);
     if (parentDetail) {
-      const subGrid = parentDetail.querySelector(".subprojects-grid");
-      if (subGrid) subGrid.style.display = "none";
+      // Ocultar la cuadrícula/portada de la categoría
+      const categoryMain = parentDetail.querySelector(".category-main-view");
+      if (categoryMain) categoryMain.style.display = "none";
 
+      // Ocultar otros subdetalles
       subdetailContents.forEach(sub => sub.style.display = "none");
 
+      // Mostrar el subdetalle específico
       const targetSubdetail = document.getElementById(`subdetail-${subprojectId}`);
       if (targetSubdetail) {
         targetSubdetail.style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+    }
+  }
+
+  // FUNCIÓN PARA VOLVER A LA VISTA DE LA CATEGORÍA PADRE DESDE UN SUBPROYECTO
+  function backToCategory(categoryId) {
+    const parentDetail = document.getElementById(`detail-${categoryId}`);
+    if (parentDetail) {
+      subdetailContents.forEach(sub => sub.style.display = "none");
+      const categoryMain = parentDetail.querySelector(".category-main-view");
+      if (categoryMain) categoryMain.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
 
@@ -114,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     subdetailContents.forEach(sub => sub.style.display = "none");
+    document.querySelectorAll(".category-main-view").forEach(cat => cat.style.display = "block");
 
     const workSection = document.getElementById("work-3d");
     if (workSection) {
@@ -141,12 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // BOTONES PARA VOLVER A LA CATEGORÍA PADRE DESDE UN SUBPROYECTO
   document.querySelectorAll(".back-to-category-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      const parentDetail = btn.closest(".project-detail-content");
-      if (parentDetail) {
-        subdetailContents.forEach(sub => sub.style.display = "none");
-        const subGrid = parentDetail.querySelector(".subprojects-grid");
-        if (subGrid) subGrid.style.display = "grid";
-      }
+      const categoryId = btn.dataset.category;
+      backToCategory(categoryId);
     });
   });
 
