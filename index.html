@@ -64,10 +64,9 @@
           <a href="#work-3d" class="dropdown-trigger">Portfolio 3D ▾</a>
           <div class="dropdown-menu">
             <a href="#" class="project-direct-link" data-project="silvano">Silvano</a>
-            <a href="#" class="project-direct-link" data-project="luminis">Luminis</a>
+            <a href="#" class="project-direct-link" data-project="productos">Productos</a>
             <a href="#" class="project-direct-link" data-project="guitarra">Guitarra</a>
-            <a href="#" class="project-direct-link" data-project="vareia">Vareia</a>
-            <a href="#" class="project-direct-link" data-project="environment">La Fuente del Encino</a>
+            <a href="#" class="project-direct-link" data-project="environment">Environment</a>
             <a href="#" class="project-direct-link" data-project="props">Props</a>
             <a href="#" class="project-direct-link" data-project="almazara">Almazara Romana</a>
           </div>
@@ -132,12 +131,12 @@
             <p class="project-mini-desc">Proyecto de escultura y diseño de personaje en 3D.</p>
           </article>
 
-          <article class="project-card project-open-btn" data-project="luminis">
+          <article class="project-card project-open-btn" data-project="productos">
             <div class="project-image-button">
-              <img src="assets/portada luminis.jpg" alt="Luminis">
+              <img src="assets/portada luminis.jpg" alt="Productos">
             </div>
-            <h3>Luminis</h3>
-            <p class="project-mini-desc">Spot publicitario y renderizado de producto fotorrealista.</p>
+            <h3>Productos</h3>
+            <p class="project-mini-desc">Diseño, renders y spots publicitarios de producto.</p>
           </article>
 
           <article class="project-card project-open-btn" data-project="guitarra">
@@ -148,20 +147,12 @@
             <p class="project-mini-desc">Modelado detallado de instrumento musical y texturizado.</p>
           </article>
 
-          <article class="project-card project-open-btn" data-project="vareia">
-            <div class="project-image-button">
-              <img src="assets/portada vareia.png" alt="Vareia">
-            </div>
-            <h3>Vareia</h3>
-            <p class="project-mini-desc">Reconstrucción histórica y entorno interactivo 3D.</p>
-          </article>
-
           <article class="project-card project-open-btn" data-project="environment">
             <div class="project-image-button">
-              <img src="assets/fuente del encino.png" alt="La Fuente del Encino">
+              <img src="assets/fuente del encino.png" alt="Environment">
             </div>
-            <h3>La Fuente del Encino</h3>
-            <p class="project-mini-desc">Diseño de escenarios, composición e iluminación ambiental.</p>
+            <h3>Environment</h3>
+            <p class="project-mini-desc">Diseño de escenarios, entornos e iluminación ambiental.</p>
           </article>
 
           <article class="project-card project-open-btn" data-project="props">
@@ -202,22 +193,60 @@
             </div>
           </div>
 
-          <!-- PROYECTO: LUMINIS -->
-          <div id="detail-luminis" class="project-detail-content" style="display: none;">
+          <!-- CATEGORÍA: PRODUCTOS (SUB-REJILLA INTERNA) -->
+          <div id="detail-productos" class="project-detail-content" style="display: none;">
             <div class="detail-header">
-              <h2>Luminis</h2>
-              <p>Spot publicitario y desarrollo visual del producto.</p>
+              <h2>Productos</h2>
+              <p>Selecciona un proyecto de producto para ver sus detalles.</p>
             </div>
-            <div class="detail-media-grid">
-              <div class="video-wrapper">
-                <video controls poster="assets/luminis.jpg">
-                  <source src="assets/vino-spot-publicitario.mp4" type="video/mp4">
-                  Tu navegador no soporta el formato de vídeo.
-                </video>
+            
+            <div class="subprojects-grid project-grid">
+              <article class="project-card subproject-open-btn" data-subproject="luminis">
+                <div class="project-image-button">
+                  <img src="assets/portada luminis.jpg" alt="Luminis">
+                </div>
+                <h3>Luminis</h3>
+                <p class="project-mini-desc">Spot publicitario y renderizado de producto fotorrealista.</p>
+              </article>
+
+              <article class="project-card subproject-open-btn" data-subproject="bolo">
+                <div class="project-image-button">
+                  <img src="assets/Portada bolo.png" alt="Bolo">
+                </div>
+                <h3>Bolo</h3>
+                <p class="project-mini-desc">Diseño y modelado 3D.</p>
+              </article>
+            </div>
+
+            <!-- SUBDETALLES DE PRODUCTOS -->
+            <div id="subdetail-luminis" class="subdetail-content" style="display: none; margin-top: 2rem;">
+              <button class="back-to-category-btn">← Volver a Productos</button>
+              <div class="detail-header" style="margin-top: 1rem;">
+                <h2>Luminis</h2>
+                <p>Spot publicitario y desarrollo visual del producto.</p>
               </div>
-              <img src="assets/patricia-render2.webp" alt="Luminis Render 1">
-              <img src="assets/patricia-render3.webp" alt="Luminis Render 2">
-              <img src="assets/patricia-vino-cartel.webp" alt="Luminis Cartel">
+              <div class="detail-media-grid">
+                <div class="video-wrapper">
+                  <video controls poster="assets/luminis.jpg">
+                    <source src="assets/vino-spot-publicitario.mp4" type="video/mp4">
+                    Tu navegador no soporta el formato de vídeo.
+                  </video>
+                </div>
+                <img src="assets/patricia-render2.webp" alt="Luminis Render 1">
+                <img src="assets/patricia-render3.webp" alt="Luminis Render 2">
+                <img src="assets/patricia-vino-cartel.webp" alt="Luminis Cartel">
+              </div>
+            </div>
+
+            <div id="subdetail-bolo" class="subdetail-content" style="display: none; margin-top: 2rem;">
+              <button class="back-to-category-btn">← Volver a Productos</button>
+              <div class="detail-header" style="margin-top: 1rem;">
+                <h2>Bolo</h2>
+                <p>Modelado y visualización 3D.</p>
+              </div>
+              <div class="detail-media-grid">
+                <img src="assets/Portada bolo.png" alt="Bolo Render">
+              </div>
             </div>
           </div>
 
@@ -235,27 +264,54 @@
             </div>
           </div>
 
-          <!-- PROYECTO: VAREIA -->
-          <div id="detail-vareia" class="project-detail-content" style="display: none;">
-            <div class="detail-header">
-              <h2>Vareia</h2>
-              <p>Reconstrucción e integración de espacios.</p>
-            </div>
-            <div class="detail-media-grid">
-              <img src="assets/vareia.png" alt="Vareia Detalle">
-            </div>
-          </div>
-
-          <!-- PROYECTO: ENVIRONMENT (LA FUENTE DEL ENCINO) -->
+          <!-- CATEGORÍA: ENVIRONMENT (SUB-REJILLA INTERNA) -->
           <div id="detail-environment" class="project-detail-content" style="display: none;">
             <div class="detail-header">
-              <h2>La Fuente del Encino</h2>
-              <p>Galería de entornos completos y diseño de iluminación.</p>
+              <h2>Environment</h2>
+              <p>Selecciona un proyecto de entorno para ver sus detalles.</p>
             </div>
-            <div class="detail-media-grid">
-              <img src="assets/fuente del encino1.png" alt="La Fuente del Encino 1">
-              <img src="assets/fuente del encino2.png" alt="La Fuente del Encino 2">
-              <img src="assets/fuente del encino3.png" alt="La Fuente del Encino 3">
+
+            <div class="subprojects-grid project-grid">
+              <article class="project-card subproject-open-btn" data-subproject="vareia">
+                <div class="project-image-button">
+                  <img src="assets/portada vareia.png" alt="Vareia">
+                </div>
+                <h3>Vareia</h3>
+                <p class="project-mini-desc">Reconstrucción histórica y entorno interactivo 3D.</p>
+              </article>
+
+              <article class="project-card subproject-open-btn" data-subproject="fuente-encino">
+                <div class="project-image-button">
+                  <img src="assets/fuente del encino.png" alt="La Fuente del Encino">
+                </div>
+                <h3>La Fuente del Encino</h3>
+                <p class="project-mini-desc">Diseño de escenarios, composición e iluminación ambiental.</p>
+              </article>
+            </div>
+
+            <!-- SUBDETALLES DE ENVIRONMENT -->
+            <div id="subdetail-vareia" class="subdetail-content" style="display: none; margin-top: 2rem;">
+              <button class="back-to-category-btn">← Volver a Environment</button>
+              <div class="detail-header" style="margin-top: 1rem;">
+                <h2>Vareia</h2>
+                <p>Reconstrucción e integración de espacios.</p>
+              </div>
+              <div class="detail-media-grid">
+                <img src="assets/vareia.png" alt="Vareia Detalle">
+              </div>
+            </div>
+
+            <div id="subdetail-fuente-encino" class="subdetail-content" style="display: none; margin-top: 2rem;">
+              <button class="back-to-category-btn">← Volver a Environment</button>
+              <div class="detail-header" style="margin-top: 1rem;">
+                <h2>La Fuente del Encino</h2>
+                <p>Galería de entornos completos y diseño de iluminación.</p>
+              </div>
+              <div class="detail-media-grid">
+                <img src="assets/fuente del encino1.png" alt="La Fuente del Encino 1">
+                <img src="assets/fuente del encino2.png" alt="La Fuente del Encino 2">
+                <img src="assets/fuente del encino3.png" alt="La Fuente del Encino 3">
+              </div>
             </div>
           </div>
 
