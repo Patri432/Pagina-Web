@@ -91,12 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // EVENTOS PARA LAS TARJETAS DE LA REJILLA
-  document.querySelectorAll(".project-open-btn").forEach(card => {
-    card.addEventListener("click", () => {
-      const projectId = card.dataset.project;
-      openProjectDetail(projectId);
-    });
+  // EVENTOS PARA LAS TARJETAS DE LA REJILLA (INCLUYENDO SUBCARD)
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".project-open-btn");
+    if (card && card.dataset.project) {
+      openProjectDetail(card.dataset.project);
+    }
   });
 
   // EVENTOS PARA EL DROPDOWN DEL MENÚ SUPERIOR
