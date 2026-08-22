@@ -352,6 +352,13 @@ a {
   margin-top: 2rem;
 }
 
+.subprojects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .service-card, .project-card {
   background-color: var(--pat-card-bg);
   padding: 2rem;
